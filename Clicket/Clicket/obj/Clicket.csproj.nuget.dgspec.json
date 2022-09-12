@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jovian\\source\\repos\\Clicket\\Clicket\\Clicket.csproj": {}
+    "C:\\Users\\jovian\\Desktop\\jp\\clicket\\Clicket\\Clicket\\Clicket.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jovian\\source\\repos\\Clicket\\Clicket\\Clicket.csproj": {
+    "C:\\Users\\jovian\\Desktop\\jp\\clicket\\Clicket\\Clicket\\Clicket.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jovian\\source\\repos\\Clicket\\Clicket\\Clicket.csproj",
+        "projectUniqueName": "C:\\Users\\jovian\\Desktop\\jp\\clicket\\Clicket\\Clicket\\Clicket.csproj",
         "projectName": "Clicket",
-        "projectPath": "C:\\Users\\jovian\\source\\repos\\Clicket\\Clicket\\Clicket.csproj",
+        "projectPath": "C:\\Users\\jovian\\Desktop\\jp\\clicket\\Clicket\\Clicket\\Clicket.csproj",
         "packagesPath": "C:\\Users\\jovian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jovian\\source\\repos\\Clicket\\Clicket\\obj\\",
+        "outputPath": "C:\\Users\\jovian\\Desktop\\jp\\clicket\\Clicket\\Clicket\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jovian\\AppData\\Roaming\\NuGet\\NuGet.Config",
