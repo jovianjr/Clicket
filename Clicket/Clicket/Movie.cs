@@ -13,7 +13,7 @@ namespace Clicket
         private int _price;
         private int _quota;
         private string _imgURL;
-        private string _genre;
+        private string[] _genre;
         private string _ageRate;
 
         public int MovieID
@@ -69,7 +69,7 @@ namespace Clicket
             set { _imgURL = value; }
         }
 
-        public string Genre
+        public string[] Genre
         {
             get { return _genre; }
             set { _genre = value; }
