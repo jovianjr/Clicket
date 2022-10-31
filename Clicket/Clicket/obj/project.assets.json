@@ -8,19 +8,19 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\jovian\\.nuget\\packages\\": {}
+    "C:\\Users\\NZN\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jovian\\Desktop\\jp\\clicket\\Clicket\\Clicket\\Clicket.csproj",
+      "projectUniqueName": "D:\\Root\\sch\\clicket\\Clicket\\Clicket\\Clicket.csproj",
       "projectName": "Clicket",
-      "projectPath": "C:\\Users\\jovian\\Desktop\\jp\\clicket\\Clicket\\Clicket\\Clicket.csproj",
-      "packagesPath": "C:\\Users\\jovian\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jovian\\Desktop\\jp\\clicket\\Clicket\\Clicket\\obj\\",
+      "projectPath": "D:\\Root\\sch\\clicket\\Clicket\\Clicket\\Clicket.csproj",
+      "packagesPath": "C:\\Users\\NZN\\.nuget\\packages\\",
+      "outputPath": "D:\\Root\\sch\\clicket\\Clicket\\Clicket\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jovian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\NZN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
