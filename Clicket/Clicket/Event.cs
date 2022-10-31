@@ -60,9 +60,9 @@ namespace Clicket
 			set { _imgURL = value; }
 		}
 
-		public BuyTicket(int eventID)
+		public bool BuyTicket(int eventID)
 		{
-
-		}
+            return false;
+        }
 	}
 }

@@ -81,9 +81,9 @@ namespace Clicket
             set { _ageRate = value; }
         }
 
-        public BuyTicket(int movieID)
+        public bool BuyTicket(int movieID)
         {
-
+            return false;
         }
     }
 }
