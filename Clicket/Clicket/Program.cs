@@ -11,7 +11,14 @@ namespace Clicket
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new Dashboard());
+
+           /* Movie @movie = new Movie();
+            Event @event = new Event();
+            Action action = new Action();
+
+            action.getList(movie);
+            action.getList(@event);*/
         }
     }
 }
