@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "HAKuxZa/wo1tnhXqkco+LgeWqr8ps2663Zq91KRqbzhwXCUOvN8+my8xgDlHUjlF1ELoQG/KW+pSO2fcFcedLQ==",
+  "dgSpecHash": "SlbUkJJBS/Glde+ccWDRR4/OB3D3NEF7PiLp8wBLm2Oq7Kc+dY8ULDbuxzFBuZWXZ6zEFyvEFNTq98ty7qmCJg==",
   "success": true,
   "projectFilePath": "D:\\Root\\sch\\clicket\\Clicket\\Clicket\\Clicket.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\NZN\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\NZN\\.nuget\\packages\\npgsql\\7.0.0\\npgsql.7.0.0.nupkg.sha512",
+    "C:\\Users\\NZN\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

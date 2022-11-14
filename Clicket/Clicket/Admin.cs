@@ -13,7 +13,7 @@ enum TicketStatus
 
 namespace Clicket
 {
-    class Admin
+    class Admin : User
     {
         public Boolean MakeEvent(string title, string description, DateTime startDate, DateTime endDate, int price, int quota, string imgURL)
         {
