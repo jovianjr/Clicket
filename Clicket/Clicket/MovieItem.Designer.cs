@@ -70,13 +70,13 @@
             // pb_poster
             // 
             this.pb_poster.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pb_poster.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pb_poster.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pb_poster.ErrorImage = null;
             this.pb_poster.Location = new System.Drawing.Point(24, 30);
             this.pb_poster.Margin = new System.Windows.Forms.Padding(2);
             this.pb_poster.Name = "pb_poster";
             this.pb_poster.Size = new System.Drawing.Size(328, 484);
-            this.pb_poster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb_poster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pb_poster.TabIndex = 18;
             this.pb_poster.TabStop = false;
             // 

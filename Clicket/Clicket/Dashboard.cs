@@ -20,7 +20,7 @@ namespace Clicket
             this.WindowState = FormWindowState.Maximized;
         }
 
-        private void populateItems(List<Movie> listMovie)
+        private void populateItems(List<Movie> listMovie, List<Event> listEvent)
         {
             MovieItem[] movieItems = new MovieItem[listMovie.Count];
 
@@ -32,7 +32,7 @@ namespace Clicket
                 movieItems[i].duration = listMovie[i].DurationHour + "h " + listMovie[i].DurationMin + "m";
                 movieItems[i].date = listMovie[i].Date.ToString("ddd, dd MMM yyyy");
                 movieItems[i].location = listMovie[i].Location;
-                movieItems[i].poster = "https://avatars.githubusercontent.com/u/79235790?v=4";
+                movieItems[i].poster = listMovie[i].ImgURL;
 
 
                 //if (flp_movie.Controls.Count > 0)
@@ -43,11 +43,11 @@ namespace Clicket
                 flp_movie.Controls.Add(movieItems[i]);
             }
 
-            EventItem[] eventItems = new EventItem[20];
-            for (int i = 0; i < movieItems.Length; i++)
+            EventItem[] eventItems = new EventItem[listEvent.Count];
+            for (int i = 0; i < eventItems.Length; i++)
             {
                 eventItems[i] = new EventItem();
-                eventItems[i].title = "Event " + i.ToString();
+                eventItems[i].title = listEvent[i].Title;
 
                 //if (flp_movie.Controls.Count > 0)
                 //{
@@ -66,7 +66,8 @@ namespace Clicket
 
             Action action = new Action();
             List<Movie> movies = action.getMovieList();
-            populateItems(movies);
+            List<Event> events = action.getEventList();
+            populateItems(movies, events);
 
         }
 

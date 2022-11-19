@@ -23,7 +23,7 @@ namespace Clicket
 
         public List<Movie> getMovies()
         {
-            List<Movie> movie = new List<Movie>();
+            List<Movie> movies = new List<Movie>();
 
             conn.Open();
             string sql = "select * from get_movies()";
@@ -47,12 +47,42 @@ namespace Clicket
                     result.ImgURL = reader["_image"] as string ?? "";
                     result.Genre = (string[])reader["_genre"];
                     result.ageRate = (string)reader["_agerate"];
-                    movie.Add(result);
+                    movies.Add(result);
                 }
             }
 
             conn.Close();
-            return movie;
+            return movies;
+        }
+
+        public List<Event> getEvents()
+        {
+            List<Event> events = new List<Event>();
+
+            conn.Open();
+            string sql = "select * from get_events()";
+            cmd = new NpgsqlCommand(sql, conn);
+            NpgsqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    Event result = new Event();
+                    result.EventID = (int)reader["_id"];
+                    result.Title = (string)reader["_title"];
+                    result.Description = (string)reader["_description"];
+                    result.Location = (string)reader["_location"];
+                    result.StartDate = (DateTime)reader["_start_date"];
+                    result.EndDate = (DateTime)reader["_end_date"];
+                    result.Price = (int)reader["_price"];
+                    result.ImgURL = reader["_image"] as string ?? "";
+                    events.Add(result);
+                }
+            }
+
+            conn.Close();
+            return events;
         }
 
         public void insert(Movie movieItem)
