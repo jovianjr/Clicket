@@ -259,7 +259,33 @@
             this.btnPay.Size = new System.Drawing.Size(106, 34);
             this.btnPay.TabIndex = 25;
             this.btnPay.Text = "Pay";
-            this.btnPay.UseVisualStyleBackColor = true;
+            this.btnPay.UseVisualStyleBackColor = false;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
+            // 
+            // lbPriceInPay
+            // 
+            this.lbPriceInPay.AutoSize = true;
+            this.lbPriceInPay.BackColor = System.Drawing.Color.White;
+            this.lbPriceInPay.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbPriceInPay.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPriceInPay.Location = new System.Drawing.Point(19, 77);
+            this.lbPriceInPay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbPriceInPay.Name = "lbPriceInPay";
+            this.lbPriceInPay.Size = new System.Drawing.Size(112, 26);
+            this.lbPriceInPay.TabIndex = 32;
+            this.lbPriceInPay.Text = "Rp 25.000";
+            this.lbPriceInPay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbDateInPay
+            // 
+            this.lbDateInPay.AutoSize = true;
+            this.lbDateInPay.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbDateInPay.Location = new System.Drawing.Point(19, 14);
+            this.lbDateInPay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbDateInPay.Name = "lbDateInPay";
+            this.lbDateInPay.Size = new System.Drawing.Size(58, 26);
+            this.lbDateInPay.TabIndex = 33;
+            this.lbDateInPay.Text = "Date";
             // 
             // lb_qty_chosen
             // 
