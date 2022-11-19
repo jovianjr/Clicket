@@ -26,7 +26,7 @@ namespace Clicket
         private string _genre;
         private string _date;
         private string _location;
-        private Image _poster;
+        private string _poster;
 
         public string title
         {
@@ -57,7 +57,12 @@ namespace Clicket
         public string duration
         {
             get { return _duration; }
-            set { _duration = value; lbDur.Text = /*_durHour + "*/ "h " /* + _durMinute*/ + "m"; }
+            set { _duration = value; lbDur.Text = value; }
+        }
+        public string poster
+        {
+            get { return _poster.ToString(); }
+            set { _poster = value; pb_poster.ImageLocation = value; pb_poster.BackgroundImageLayout = ImageLayout.Stretch; }
         }
 
         private void btn_Details_Click(object sender, EventArgs e)

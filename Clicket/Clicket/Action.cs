@@ -20,6 +20,11 @@ namespace Clicket
             db.insert(eventItem);
         }
 
+        public List<Movie> getMovieList()
+        {
+            return db.getMovies();
+        }
+
 
     }
 }

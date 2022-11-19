@@ -20,6 +20,41 @@ namespace Clicket
         {
             conn = new NpgsqlConnection(connstring);
         }
+
+        public List<Movie> getMovies()
+        {
+            List<Movie> movie = new List<Movie>();
+
+            conn.Open();
+            string sql = "select * from get_movies()";
+            cmd = new NpgsqlCommand(sql, conn);
+            NpgsqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    Movie result = new Movie();
+                    result.MovieID = (int)reader["_id"];
+                    result.Title = (string)reader["_title"];
+                    result.Description = (string)reader["_description"];
+                    result.Location = (string)reader["_location"];
+                    result.Date = (DateTime)reader["_date"];
+                    result.DurationHour = (int)reader["_duration_hour"];
+                    result.DurationMin = (int)reader["_duration_min"];
+                    result.Price = (int)reader["_price"];
+                    result.Quota = (int)reader["_quota"];
+                    result.ImgURL = reader["_image"] as string ?? "";
+                    result.Genre = (string[])reader["_genre"];
+                    result.ageRate = (string)reader["_agerate"];
+                    movie.Add(result);
+                }
+            }
+
+            conn.Close();
+            return movie;
+        }
+
         public void insert(Movie movieItem)
         {
             conn.Open();

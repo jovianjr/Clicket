@@ -7,6 +7,7 @@ namespace Clicket
         private int _movieID;
         private string _title;
         private string _description;
+        private string _location;
         private DateTime _date;
         private int _durationHour;
         private int _durationMin;
@@ -19,6 +20,7 @@ namespace Clicket
         public int MovieID
         {
             get { return _movieID; }
+            set { _movieID = value; }
         }
 
         public string Title
@@ -31,6 +33,12 @@ namespace Clicket
         {
             get { return _description; }
             set { _description = value; }
+        }
+
+        public string Location
+        {
+            get { return _location; }
+            set { _location = value; }
         }
 
         public DateTime Date
