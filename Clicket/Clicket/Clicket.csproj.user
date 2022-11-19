@@ -16,6 +16,9 @@
     <Compile Update="MovieItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="SubmitPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">

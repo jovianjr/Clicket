@@ -75,6 +75,7 @@ namespace Clicket
                     result.Location = (string)reader["_location"];
                     result.StartDate = (DateTime)reader["_start_date"];
                     result.EndDate = (DateTime)reader["_end_date"];
+                    result.Quota = (int)reader["_quota"];
                     result.Price = (int)reader["_price"];
                     result.ImgURL = reader["_image"] as string ?? "";
                     events.Add(result);

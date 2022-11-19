@@ -5,63 +5,50 @@ namespace Clicket
         public static Detail instance;
         public Label lb_Title;
 
-        private string _title;
-        private string _ageRate;
-        private string _duration;
-        private string _genre;
-        private string _date;
-        private string _location;
-        private string _description;
-        private string _quota;
-        private Image _poster;
         private int _quantity;
-        public string title
+
+        public Detail(Movie currMovie)
         {
-            get { return _title; }
-            set { _title = value; lbTitle.Text = lbTitleInPay.Text = value; }
+            InitializeComponent();
+            instance = this;
+
+            lb_Title = lb_title;
+            lb_Title.Text = "Movie Details";
+            lbTitle.Text = currMovie.Title;
+            lbTitleInPay.Text = currMovie.Title;
+            tbDescription.Text = currMovie.Description;
+            lbLocation.Text = currMovie.Location;
+            lbDate.Text = currMovie.Date.ToString("ddd, dd MMM yyyy");
+            lbDur.Text = currMovie.DurationHour + "h " + currMovie.DurationMin + "m";
+            lblPrice.Text = "Rp. " + currMovie.Price.ToString();
+            lbQuota.Text = currMovie.Quota.ToString() + " seats available";
+            pb_poster.ImageLocation = currMovie.ImgURL;
+
+            lbDateInPay.Text = currMovie.Date.ToString("ddd, dd MMM yyyy");
+            lbLocationInPay.Text = currMovie.Location;
+            lbPriceInPay.Text = "Rp. " + currMovie.Price.ToString();
+
+            this.WindowState = FormWindowState.Maximized;
         }
 
-        public string ageRate
-        {
-            get { return _ageRate; }
-            set { _ageRate = value; lbAgeRate.Text = value; }
-        }
-        public string genre
-        {
-            get { return _genre; }
-            set { _genre = value; lbGenre.Text = value; }
-        }
-        public string date
-        {
-            get { return _date; }
-            set { _date = value; lbDate.Text = lbDateInPay.Text = value; }
-        }
-        public string location
-        {
-            get { return _location; }
-            set { _location = value; lbLocation.Text = lbLocationInPay.Text = value; }
-        }
-        public string duration
-        {
-            get { return _duration; }
-            set { _duration = value; lbDur.Text = value; }
-        }
-        public string description
-        {
-            get { return _description; }
-            set { _description = value; tbDescription.Text = value; }
-        }
-        public string quota
-        {
-            get { return _quota; }
-            set { _quota = value; lbQuota.Text = value + " tickets available"; }
-        }
-
-        public Detail()
+        public Detail(Event currEvent)
         {
             InitializeComponent();
             instance = this;
             lb_Title = lb_title;
+            lb_Title.Text = "Event Details";
+            lbTitle.Text = currEvent.Title;
+            lbTitleInPay.Text = currEvent.Title;
+            tbDescription.Text = currEvent.Description;
+            lbLocation.Text = currEvent.Location;
+            lbDate.Text = currEvent.StartDate.ToString("dd MMM yyyy") + " - " + currEvent.EndDate.ToString("dd MMM yyyy");
+            lblPrice.Text = "Rp. " + currEvent.Price.ToString();
+            lbQuota.Text = currEvent.Quota.ToString() + " seats available";
+            pb_poster.ImageLocation = currEvent.ImgURL;
+
+            lbDateInPay.Text = currEvent.StartDate.ToString("dd MMM yyyy") + " - " + currEvent.EndDate.ToString("dd MMM yyyy");
+            lbLocationInPay.Text = currEvent.Location;
+            lbPriceInPay.Text = "Rp. " + currEvent.Price.ToString();
             this.WindowState = FormWindowState.Maximized;
         }
 

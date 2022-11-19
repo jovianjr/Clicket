@@ -2,7 +2,7 @@
 
 namespace Clicket
 { 
-	class Event
+	public class Event
 	{
 		private int _eventID;
 		private string _title;

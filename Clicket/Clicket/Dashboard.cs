@@ -24,41 +24,17 @@ namespace Clicket
         {
             MovieItem[] movieItems = new MovieItem[listMovie.Count];
 
+
             for (int i = 0; i < movieItems.Length; i++)
             {
-                movieItems[i] = new MovieItem();
-                movieItems[i].title = listMovie[i].Title;
-                movieItems[i].ageRate = "" + listMovie[i].ageRate;
-                movieItems[i].duration = listMovie[i].DurationHour + "h " + listMovie[i].DurationMin + "m";
-                movieItems[i].date = listMovie[i].Date.ToString("ddd, dd MMM yyyy");
-                movieItems[i].location = listMovie[i].Location;
-                movieItems[i].price = "Rp. " + listMovie[i].Price.ToString();
-                movieItems[i].poster = listMovie[i].ImgURL;
-
-
-                //if (flp_movie.Controls.Count > 0)
-                //{
-                //    flp_movie.Controls.Clear();
-                //}
-                //else
+                movieItems[i] = new MovieItem(listMovie[i]);
                 flp_movie.Controls.Add(movieItems[i]);
             }
 
             EventItem[] eventItems = new EventItem[listEvent.Count];
             for (int i = 0; i < eventItems.Length; i++)
             {
-                eventItems[i] = new EventItem();
-                eventItems[i].title = listEvent[i].Title;
-                eventItems[i].date = listEvent[i].StartDate.ToString("dd MMM yyyy") + " - " + listEvent[i].EndDate.ToString("dd MMM yyyy");
-                eventItems[i].location = listEvent[i].Location;
-                eventItems[i].price = "Rp. " + listEvent[i].Price.ToString();
-                eventItems[i].poster = listEvent[i].ImgURL;
-
-                //if (flp_movie.Controls.Count > 0)
-                //{
-                //    flp_movie.Controls.Clear();
-                //}
-                //else
+                eventItems[i] = new EventItem(listEvent[i]);
                 flp_event.Controls.Add(eventItems[i]);
             }
         }

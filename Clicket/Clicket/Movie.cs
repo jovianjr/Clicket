@@ -2,7 +2,7 @@
 
 namespace Clicket
 {
-    class Movie
+    public class Movie
     {
         private int _movieID;
         private string _title;
