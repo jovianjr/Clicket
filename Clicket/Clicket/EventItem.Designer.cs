@@ -42,11 +42,11 @@
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
-            this.lbTitle.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbTitle.Location = new System.Drawing.Point(25, 528);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(71, 26);
+            this.lbTitle.Size = new System.Drawing.Size(69, 25);
             this.lbTitle.TabIndex = 8;
             this.lbTitle.Text = "Judul";
             // 
@@ -58,6 +58,7 @@
             this.pb_poster.Margin = new System.Windows.Forms.Padding(2);
             this.pb_poster.Name = "pb_poster";
             this.pb_poster.Size = new System.Drawing.Size(328, 484);
+            this.pb_poster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pb_poster.TabIndex = 7;
             this.pb_poster.TabStop = false;
             // 
@@ -65,12 +66,12 @@
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.BackColor = System.Drawing.Color.White;
-            this.lblPrice.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblPrice.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblPrice.Location = new System.Drawing.Point(17, 617);
             this.lblPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(112, 26);
+            this.lblPrice.Size = new System.Drawing.Size(111, 25);
             this.lblPrice.TabIndex = 10;
             this.lblPrice.Text = "Rp 25.000";
             this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -79,7 +80,7 @@
             // 
             this.btn_Details.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(61)))));
             this.btn_Details.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Details.Font = new System.Drawing.Font("Rubik", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Details.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Details.ForeColor = System.Drawing.Color.White;
             this.btn_Details.Location = new System.Drawing.Point(254, 613);
             this.btn_Details.Name = "btn_Details";
@@ -92,22 +93,22 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblDate.Location = new System.Drawing.Point(17, 547);
             this.lblDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(58, 26);
+            this.lblDate.Size = new System.Drawing.Size(57, 25);
             this.lblDate.TabIndex = 14;
             this.lblDate.Text = "Date";
             // 
             // lblLocation
             // 
             this.lblLocation.AutoSize = true;
-            this.lblLocation.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblLocation.Location = new System.Drawing.Point(17, 573);
             this.lblLocation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLocation.Name = "lblLocation";
-            this.lblLocation.Size = new System.Drawing.Size(98, 26);
+            this.lblLocation.Size = new System.Drawing.Size(94, 25);
             this.lblLocation.TabIndex = 15;
             this.lblLocation.Text = "Location";
             // 

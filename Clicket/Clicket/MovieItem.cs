@@ -26,6 +26,7 @@ namespace Clicket
         private string _genre;
         private string _date;
         private string _location;
+        private string _price;
         private string _poster;
 
         public string title
@@ -58,6 +59,11 @@ namespace Clicket
         {
             get { return _duration; }
             set { _duration = value; lbDur.Text = value; }
+        }
+        public string price
+        {
+            get { return _price; }
+            set { _price = value; lbPrice.Text = value; }
         }
         public string poster
         {

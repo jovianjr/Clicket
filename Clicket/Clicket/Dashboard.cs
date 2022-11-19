@@ -32,6 +32,7 @@ namespace Clicket
                 movieItems[i].duration = listMovie[i].DurationHour + "h " + listMovie[i].DurationMin + "m";
                 movieItems[i].date = listMovie[i].Date.ToString("ddd, dd MMM yyyy");
                 movieItems[i].location = listMovie[i].Location;
+                movieItems[i].price = "Rp. " + listMovie[i].Price.ToString();
                 movieItems[i].poster = listMovie[i].ImgURL;
 
 
@@ -48,6 +49,10 @@ namespace Clicket
             {
                 eventItems[i] = new EventItem();
                 eventItems[i].title = listEvent[i].Title;
+                eventItems[i].date = listEvent[i].StartDate.ToString("dd MMM yyyy") + " - " + listEvent[i].EndDate.ToString("dd MMM yyyy");
+                eventItems[i].location = listEvent[i].Location;
+                eventItems[i].price = "Rp. " + listEvent[i].Price.ToString();
+                eventItems[i].poster = listEvent[i].ImgURL;
 
                 //if (flp_movie.Controls.Count > 0)
                 //{
