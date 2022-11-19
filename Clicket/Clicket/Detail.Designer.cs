@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbAgeRate = new System.Windows.Forms.Label();
             this.lbTitle = new System.Windows.Forms.Label();
             this.pb_poster = new System.Windows.Forms.PictureBox();
             this.Title = new System.Windows.Forms.Panel();
@@ -36,9 +35,17 @@
             this.lb_title = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pn_Details = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblGenre = new System.Windows.Forms.Label();
+            this.lblDur = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblLocation = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.btn_buy = new System.Windows.Forms.Button();
             this.pn_payment = new System.Windows.Forms.Panel();
             this.lb_time = new System.Windows.Forms.Label();
-            this.btn_redeem = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnPay = new System.Windows.Forms.Button();
             this.lb_qty_chosen = new System.Windows.Forms.Label();
@@ -48,35 +55,21 @@
             this.btn_addQty = new System.Windows.Forms.Button();
             this.tb_qty = new System.Windows.Forms.TextBox();
             this.lb_qty = new System.Windows.Forms.Label();
-            this.tb_voucher = new System.Windows.Forms.TextBox();
             this.cb_time = new System.Windows.Forms.ComboBox();
             this.lb_cinema = new System.Windows.Forms.Label();
             this.cb_cinema = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pn_Details = new System.Windows.Forms.Panel();
-            this.btn_buy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb_poster)).BeginInit();
             this.Title.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.pn_Details.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.pn_payment.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pn_Details.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lbAgeRate
-            // 
-            this.lbAgeRate.AutoSize = true;
-            this.lbAgeRate.BackColor = System.Drawing.Color.Cornsilk;
-            this.lbAgeRate.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbAgeRate.Location = new System.Drawing.Point(17, 50);
-            this.lbAgeRate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbAgeRate.Name = "lbAgeRate";
-            this.lbAgeRate.Size = new System.Drawing.Size(26, 26);
-            this.lbAgeRate.TabIndex = 8;
-            this.lbAgeRate.Text = "R";
             // 
             // lbTitle
             // 
@@ -142,9 +135,9 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.pn_payment);
             this.panel1.Controls.Add(this.pb_poster);
             this.panel1.Controls.Add(this.pn_Details);
+            this.panel1.Controls.Add(this.pn_payment);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 100);
             this.panel1.Name = "panel1";
@@ -152,15 +145,127 @@
             this.panel1.TabIndex = 10;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // pn_Details
+            // 
+            this.pn_Details.Controls.Add(this.panel2);
+            this.pn_Details.Controls.Add(this.lblLocation);
+            this.pn_Details.Controls.Add(this.lblDate);
+            this.pn_Details.Controls.Add(this.lblPrice);
+            this.pn_Details.Controls.Add(this.btn_buy);
+            this.pn_Details.Controls.Add(this.lbTitle);
+            this.pn_Details.Location = new System.Drawing.Point(459, 325);
+            this.pn_Details.Name = "pn_Details";
+            this.pn_Details.Size = new System.Drawing.Size(897, 309);
+            this.pn_Details.TabIndex = 9;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.lblGenre);
+            this.panel2.Controls.Add(this.lblDur);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(602, 13);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(276, 32);
+            this.panel2.TabIndex = 29;
+            // 
+            // lblGenre
+            // 
+            this.lblGenre.AutoSize = true;
+            this.lblGenre.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblGenre.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblGenre.Location = new System.Drawing.Point(-9, 0);
+            this.lblGenre.Margin = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.lblGenre.Name = "lblGenre";
+            this.lblGenre.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.lblGenre.Size = new System.Drawing.Size(91, 26);
+            this.lblGenre.TabIndex = 24;
+            this.lblGenre.Text = "Genre";
+            this.lblGenre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblDur
+            // 
+            this.lblDur.AutoSize = true;
+            this.lblDur.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.lblDur.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblDur.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDur.Location = new System.Drawing.Point(82, 0);
+            this.lblDur.Margin = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.lblDur.Name = "lblDur";
+            this.lblDur.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.lblDur.Size = new System.Drawing.Size(104, 26);
+            this.lblDur.TabIndex = 28;
+            this.lblDur.Text = "1h 40m";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(61)))));
+            this.label1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label1.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(186, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.label1.Size = new System.Drawing.Size(90, 26);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "PG-13";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblLocation
+            // 
+            this.lblLocation.AutoSize = true;
+            this.lblLocation.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblLocation.Location = new System.Drawing.Point(17, 139);
+            this.lblLocation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLocation.Name = "lblLocation";
+            this.lblLocation.Size = new System.Drawing.Size(98, 26);
+            this.lblLocation.TabIndex = 26;
+            this.lblLocation.Text = "Location";
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDate.Location = new System.Drawing.Point(17, 113);
+            this.lblDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(58, 26);
+            this.lblDate.TabIndex = 25;
+            this.lblDate.Text = "Date";
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.BackColor = System.Drawing.Color.White;
+            this.lblPrice.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPrice.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblPrice.Location = new System.Drawing.Point(766, 223);
+            this.lblPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(112, 26);
+            this.lblPrice.TabIndex = 23;
+            this.lblPrice.Text = "Rp 25.000";
+            this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btn_buy
+            // 
+            this.btn_buy.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_buy.Location = new System.Drawing.Point(736, 255);
+            this.btn_buy.Name = "btn_buy";
+            this.btn_buy.Size = new System.Drawing.Size(142, 38);
+            this.btn_buy.TabIndex = 9;
+            this.btn_buy.Text = "Buy Ticket";
+            this.btn_buy.UseVisualStyleBackColor = true;
+            this.btn_buy.Click += new System.EventHandler(this.btn_buy_Click);
+            // 
             // pn_payment
             // 
             this.pn_payment.Controls.Add(this.lb_time);
-            this.pn_payment.Controls.Add(this.btn_redeem);
             this.pn_payment.Controls.Add(this.panel5);
             this.pn_payment.Controls.Add(this.btn_addQty);
             this.pn_payment.Controls.Add(this.tb_qty);
             this.pn_payment.Controls.Add(this.lb_qty);
-            this.pn_payment.Controls.Add(this.tb_voucher);
             this.pn_payment.Controls.Add(this.cb_time);
             this.pn_payment.Controls.Add(this.lb_cinema);
             this.pn_payment.Controls.Add(this.cb_cinema);
@@ -183,16 +288,6 @@
             this.lb_time.Size = new System.Drawing.Size(131, 26);
             this.lb_time.TabIndex = 25;
             this.lb_time.Text = "Select Time:";
-            // 
-            // btn_redeem
-            // 
-            this.btn_redeem.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_redeem.Location = new System.Drawing.Point(520, 546);
-            this.btn_redeem.Name = "btn_redeem";
-            this.btn_redeem.Size = new System.Drawing.Size(106, 32);
-            this.btn_redeem.TabIndex = 24;
-            this.btn_redeem.Text = "Redeem";
-            this.btn_redeem.UseVisualStyleBackColor = true;
             // 
             // panel5
             // 
@@ -295,14 +390,6 @@
             this.lb_qty.TabIndex = 20;
             this.lb_qty.Text = "Quantity:";
             // 
-            // tb_voucher
-            // 
-            this.tb_voucher.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tb_voucher.Location = new System.Drawing.Point(201, 546);
-            this.tb_voucher.Name = "tb_voucher";
-            this.tb_voucher.Size = new System.Drawing.Size(313, 32);
-            this.tb_voucher.TabIndex = 18;
-            // 
             // cb_time
             // 
             this.cb_time.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -367,26 +454,6 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Barbarian";
             // 
-            // pn_Details
-            // 
-            this.pn_Details.Controls.Add(this.btn_buy);
-            this.pn_Details.Controls.Add(this.lbAgeRate);
-            this.pn_Details.Controls.Add(this.lbTitle);
-            this.pn_Details.Location = new System.Drawing.Point(459, 373);
-            this.pn_Details.Name = "pn_Details";
-            this.pn_Details.Size = new System.Drawing.Size(897, 261);
-            this.pn_Details.TabIndex = 9;
-            // 
-            // btn_buy
-            // 
-            this.btn_buy.Location = new System.Drawing.Point(17, 205);
-            this.btn_buy.Name = "btn_buy";
-            this.btn_buy.Size = new System.Drawing.Size(129, 38);
-            this.btn_buy.TabIndex = 9;
-            this.btn_buy.Text = "Buy Ticket";
-            this.btn_buy.UseVisualStyleBackColor = true;
-            this.btn_buy.Click += new System.EventHandler(this.btn_buy_Click);
-            // 
             // Detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -395,26 +462,27 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Title);
             this.Name = "Detail";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Details";
             this.Load += new System.EventHandler(this.Detail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_poster)).EndInit();
             this.Title.ResumeLayout(false);
             this.Title.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.pn_Details.ResumeLayout(false);
+            this.pn_Details.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.pn_payment.ResumeLayout(false);
             this.pn_payment.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pn_Details.ResumeLayout(false);
-            this.pn_Details.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Label lbAgeRate;
         private Label lbTitle;
         private PictureBox pb_poster;
         private Panel Title;
@@ -431,7 +499,6 @@
         private PictureBox pictureBox1;
         private Label label2;
         private Label label3;
-        private Button btn_redeem;
         private Panel panel5;
         private Button btnPay;
         private Label lb_qty_chosen;
@@ -441,7 +508,13 @@
         private Button btn_addQty;
         private TextBox tb_qty;
         private Label lb_qty;
-        private TextBox tb_voucher;
         private Label lb_time;
+        private Panel panel2;
+        private Label lblGenre;
+        private Label lblDur;
+        private Label label1;
+        private Label lblLocation;
+        private Label lblDate;
+        private Label lblPrice;
     }
 }

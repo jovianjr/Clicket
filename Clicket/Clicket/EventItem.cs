@@ -21,7 +21,6 @@ namespace Clicket
         }
 
         private string _eventTitle;
-        private string _ageRate;
         private Image _poster;
 
         [Category("CustomProps")]
@@ -31,20 +30,11 @@ namespace Clicket
             set { _eventTitle = value; lbTitle.Text = value; }
         }
 
-
-        [Category("CustomProps")]
-        public string ageRate
-        {
-            get { return _ageRate; }
-            set { _ageRate = value; lbAgeRate.Text = value; }
-        }
-
         private void btn_Details_Click(object sender, EventArgs e)
         {
             Detail detail = new Detail();
             Detail.instance.lb_Title.Text = "Event Details";
             detail.Show();
-
         }
     }
 }
