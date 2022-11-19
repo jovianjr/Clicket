@@ -105,21 +105,6 @@ namespace Clicket
             _quantity += 1;
             tb_qty.Text = _quantity.ToString();
             lb_qty_chosen.Text = "x" + tb_qty.Text;
-            lbTotal.Text = HitungTotal(); 
-        }
-
-        private void btn_minQty_Click(object sender, EventArgs e)
-        {
-            _quantity -= 1;
-            tb_qty.Text = _quantity.ToString();
-            lb_qty_chosen.Text = "x" + tb_qty.Text;
-            lbTotal.Text = HitungTotal();
-        }
-
-        private void btnPay_Click(object sender, EventArgs e)
-        {
-            SubmitPayment submitPayment = new SubmitPayment(lbTotal.Text);
-            submitPayment.Show();
         }
     }
 }
