@@ -48,13 +48,13 @@ namespace Clicket
         }
         public string description
         {
-            get { return _duration; }
-            set { _duration = value; tbDescription.Text = value; }
+            get { return _description; }
+            set { _description = value; tbDescription.Text = value; }
         }
         public string quota
         {
             get { return _quota; }
-            set { _quota = value; lbQuota.Text = value + "tickets available"; }
+            set { _quota = value; lbQuota.Text = value + " tickets available"; }
         }
 
         public Detail()
@@ -105,15 +105,6 @@ namespace Clicket
             _quantity += 1;
             tb_qty.Text = _quantity.ToString();
             lb_qty_chosen.Text = "x" + tb_qty.Text;
-            lbTotal.Text = HitungTotal(); 
-        }
-
-        private void btn_minQty_Click(object sender, EventArgs e)
-        {
-            _quantity -= 1;
-            tb_qty.Text = _quantity.ToString();
-            lb_qty_chosen.Text = "x" + tb_qty.Text;
-            lbTotal.Text = HitungTotal();
         }
     }
 }
