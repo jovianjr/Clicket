@@ -31,7 +31,6 @@ namespace Clicket
             set { _movieTitle = value; lbTitle.Text = value; }
         }
 
-
         [Category("CustomProps")]
         public string ageRate
         {
@@ -44,7 +43,6 @@ namespace Clicket
             Detail detail = new Detail();
             Detail.instance.lb_Title.Text = "Movie Details";
             detail.Show();
-
         }
     }
 }

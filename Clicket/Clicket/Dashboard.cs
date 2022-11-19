@@ -33,7 +33,7 @@ namespace Clicket
                 //    flp_movie.Controls.Clear();
                 //}
                 //else
-                    flp_movie.Controls.Add(movieItems[i]);
+                flp_movie.Controls.Add(movieItems[i]);
             }
 
             EventItem[] eventItems = new EventItem[20];
@@ -41,7 +41,6 @@ namespace Clicket
             {
                 eventItems[i] = new EventItem();
                 eventItems[i].title = "Event " + i.ToString();
-                eventItems[i].ageRate = "-";
 
                 //if (flp_movie.Controls.Count > 0)
                 //{
@@ -56,6 +55,8 @@ namespace Clicket
         {
             populateItems();
             flp_event.Visible = false;
+            btn_Movie.BackColor = Color.FromArgb(255, 195, 0);
+            iconMovie.BackColor = Color.FromArgb(255, 195, 0);
         }
 
         private void btn_Movie_Click(object sender, EventArgs e)
@@ -64,6 +65,12 @@ namespace Clicket
             flp_event.Visible = false;
             lbTitle.Text = "#MOVIES";
             lbSubTitle.Text = "NOW SHOWING";
+
+            btn_Event.BackColor = Color.White;
+            iconEvent.BackColor = Color.White;
+
+            btn_Movie.BackColor = Color.FromArgb(255, 195, 0);
+            iconMovie.BackColor = Color.FromArgb(255, 195, 0);
         }
 
         private void btn_Event_Click(object sender, EventArgs e)
@@ -72,8 +79,22 @@ namespace Clicket
             flp_event.Visible = true;
             lbTitle.Text = "#EVENTS";
             lbSubTitle.Text = "WILL BE HELD";
+
+            btn_Movie.BackColor = Color.White;
+            iconMovie.BackColor = Color.White;
+
+            btn_Event.BackColor = Color.FromArgb(255, 195, 0);
+            iconEvent.BackColor = Color.FromArgb(255, 195, 0);
         }
 
-        
+        private void iconEvent_Click(object sender, EventArgs e)
+        {
+            btn_Event.PerformClick();
+        }
+
+        private void iconMovie_Click(object sender, EventArgs e)
+        {
+            btn_Movie.PerformClick();
+        }
     }
 }
