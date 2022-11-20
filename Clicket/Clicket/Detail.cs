@@ -4,6 +4,8 @@ namespace Clicket
     {
         public static Detail instance;
         public Label lb_Title;
+        private Movie _movie;
+        private Event _event;
 
         private int _quantity;
 
@@ -11,6 +13,7 @@ namespace Clicket
         {
             InitializeComponent();
             instance = this;
+            _movie = currMovie;
 
             lb_Title = lb_title;
             lb_Title.Text = "Movie Details";
@@ -23,6 +26,7 @@ namespace Clicket
             lblPrice.Text = "Rp. " + currMovie.Price.ToString();
             lbQuota.Text = currMovie.Quota.ToString() + " seats available";
             pb_poster.ImageLocation = currMovie.ImgURL;
+            lbGenre.Text = string.Join(", ", currMovie.Genre);
 
             lbDateInPay.Text = currMovie.Date.ToString("ddd, dd MMM yyyy");
             lbLocationInPay.Text = currMovie.Location;
@@ -35,6 +39,8 @@ namespace Clicket
         {
             InitializeComponent();
             instance = this;
+            _event = currEvent;
+
             lb_Title = lb_title;
             lb_Title.Text = "Event Details";
             lbTitle.Text = currEvent.Title;
@@ -106,7 +112,7 @@ namespace Clicket
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            SubmitPayment submitPayment = new SubmitPayment(lbTotal.Text);
+            SubmitPayment submitPayment = new SubmitPayment(lbTotal.Text, _quantity, _movie, _event);
             submitPayment.Show();
 
         }

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -37,6 +38,16 @@ namespace Clicket
         public List<History> getHistoryList(int _id)
         {
             return db.getHistory(_id);
+        }
+
+        public Boolean orderMovie(int movie_id, int user_id, int qty, int amount, string file)
+        {
+            return db.order_movie(movie_id, user_id, qty, amount, file);
+        }
+
+        public Boolean orderEvent(int event_id, int user_id, int qty, int amount, string file)
+        {
+            return db.order_event(event_id, user_id, qty, amount, file);
         }
 
     }

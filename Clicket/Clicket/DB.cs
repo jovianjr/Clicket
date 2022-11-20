@@ -1,4 +1,5 @@
-﻿using Npgsql;
+﻿using Microsoft.Extensions.Logging;
+using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -145,19 +146,19 @@ namespace Clicket
             {
                 while (reader.Read())
                 {
+                    int id = (int)reader["_id"];
                     string username = (string)reader["_username"];
                     string password = (string)reader["_password"];
                     string name = (string)reader["_name"];
                     string email = (string)reader["_email"];
                     int phone = (int)reader["_phone"];
                     DateTime birth = (DateTime)reader["_birth"];
-                    user.SetData(username, password, name, email, phone, birth);
+                    user.SetData(id, username, password, name, email, phone, birth);
                 }
             }
 
             conn.Close();
             return user;
-
         }
     
         public List<History> getHistory(int id)
@@ -189,6 +190,48 @@ namespace Clicket
 
             conn.Close();
             return history;
+        }
+
+        public Boolean order_movie(int movie_id, int user_id, int qty, int amount, string file)
+        {
+            conn.Open();
+            string result = "0";
+            string sql = @"select * from order_movie(:movie_id, :user_id, :qty, :amount, :file)";
+            cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("movie_id", movie_id);
+            cmd.Parameters.AddWithValue("user_id", user_id);
+            cmd.Parameters.AddWithValue("qty", qty);
+            cmd.Parameters.AddWithValue("amount", amount);
+            cmd.Parameters.AddWithValue("file", file);
+
+            var firstColumn = cmd.ExecuteScalar();
+            if (firstColumn != null)
+            {
+                result = firstColumn.ToString();
+            }
+
+            return result == "0" ? false : true;
+        }
+
+        public Boolean order_event(int event_id, int user_id, int qty, int amount, string file)
+        {
+            conn.Open();
+            string result = "0";
+            string sql = @"select * from order_event(:event_id, :user_id, :qty, :amount, :file)";
+            cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("event_id", event_id);
+            cmd.Parameters.AddWithValue("user_id", user_id);
+            cmd.Parameters.AddWithValue("qty", qty);
+            cmd.Parameters.AddWithValue("amount", amount);
+            cmd.Parameters.AddWithValue("file", file);
+
+            var firstColumn = cmd.ExecuteScalar();
+            if (firstColumn != null)
+            {
+                result = firstColumn.ToString();
+            }
+
+            return result == "0" ? false : true;
         }
     }
 }

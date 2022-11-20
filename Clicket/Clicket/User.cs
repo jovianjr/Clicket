@@ -1,10 +1,12 @@
 ﻿using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Xml.Linq;
+using System.Security.Cryptography;
 
 namespace Clicket
 {
     internal class User
     {
+        private static int _id;
         private string _username;
         private string _password;
         private string _name;
@@ -12,7 +14,7 @@ namespace Clicket
         private int _phone;
         private DateTime _birth;
 
-        public static int UserID { get; }
+        public static int UserID { get => _id; }
 
         public string Username { get => _username; }
 
@@ -26,8 +28,9 @@ namespace Clicket
 
         public DateTime Birth { get => _birth; set => _birth = value; }
 
-        public void SetData(string username, string password, string name, string email, int phone, DateTime birth)
+        public void SetData(int id, string username, string password, string name, string email, int phone, DateTime birth)
         {
+            _id = id;
             _username = username;
             _password = password;
             _name = name;
