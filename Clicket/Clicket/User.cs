@@ -12,7 +12,7 @@ namespace Clicket
         private int _phone;
         private DateTime _birth;
 
-        public int UserID { get; }
+        public static int UserID { get; }
 
         public string Username { get => _username; }
 

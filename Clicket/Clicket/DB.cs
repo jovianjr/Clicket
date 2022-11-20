@@ -159,5 +159,36 @@ namespace Clicket
             return user;
 
         }
+    
+        public List<History> getHistory(int id)
+        {
+            List<History> history = new List<History>();
+
+            conn.Open();
+            string sql = "select * from get_order_history(:_id)";
+            cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("_id", id);
+            NpgsqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    string title = (string)reader["_title"];
+                    string date = (string)reader["_date"];
+                    string location = (string)reader["_location"]; 
+                    string price = reader["_price"].ToString(); 
+                    string qty = reader["_quantity"].ToString(); 
+                    string total = reader["_total"].ToString();
+                    string status = (string)reader["_status"];
+                    History result = new History(title, date, location, price, qty, total, status);
+
+                    history.Add(result);
+                }
+            }
+
+            conn.Close();
+            return history;
+        }
     }
 }

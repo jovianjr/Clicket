@@ -10,6 +10,9 @@
     <Compile Update="EventItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="History.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Login.cs">
       <SubType>Form</SubType>
     </Compile>

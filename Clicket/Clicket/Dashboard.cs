@@ -20,7 +20,7 @@ namespace Clicket
             this.WindowState = FormWindowState.Maximized;
         }
 
-        private void populateItems(List<Movie> listMovie, List<Event> listEvent)
+        private void populateItems(List<Movie> listMovie, List<Event> listEvent, List<History> listHistory)
         {
             MovieItem[] movieItems = new MovieItem[listMovie.Count];
 
@@ -37,6 +37,12 @@ namespace Clicket
                 eventItems[i] = new EventItem(listEvent[i]);
                 flp_event.Controls.Add(eventItems[i]);
             }
+
+            History[] history = new History[listHistory.Count];
+            for (int i = 0; i < history.Length; i++)
+            {
+                flp_history.Controls.Add(listHistory[i]);
+            }
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
@@ -49,7 +55,8 @@ namespace Clicket
             Action action = new Action();
             List<Movie> movies = action.getMovieList();
             List<Event> events = action.getEventList();
-            populateItems(movies, events);
+            List<History> histories = action.getHistoryList(User.UserID);
+            populateItems(movies, events, histories);
 
         }
 

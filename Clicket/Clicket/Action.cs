@@ -34,5 +34,10 @@ namespace Clicket
             return db.getEvents();
         }
 
+        public List<History> getHistoryList(int _id)
+        {
+            return db.getHistory(_id);
+        }
+
     }
 }

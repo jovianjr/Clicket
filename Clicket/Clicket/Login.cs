@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 
 namespace Clicket
 {
@@ -51,7 +52,19 @@ namespace Clicket
             Action action = new Action();
             User user = action.login(username, password);
 
-            Debug.WriteLine(user.Name);
+            if(user.Name != null)
+            {
+                var frm = new Dashboard();
+                frm.Location = this.Location;
+                frm.StartPosition = FormStartPosition.Manual;
+                frm.FormClosing += delegate { this.Show(); };
+                frm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("silakan cek ulang username dan password", "Login Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void linkFAQ_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
