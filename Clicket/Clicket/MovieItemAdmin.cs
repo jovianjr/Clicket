@@ -10,14 +10,11 @@ using System.Windows.Forms;
 
 namespace Clicket
 {
-    public partial class MovieItem : UserControl
+    public partial class MovieItemAdmin : UserControl
     {
-        public static MovieItem instance;
-
-        public MovieItem()
+        public MovieItemAdmin()
         {
             InitializeComponent();
-            instance = this;
         }
 
         private string _movieTitle;
@@ -63,13 +60,19 @@ namespace Clicket
         public string price
         {
             get { return _price; }
-            set { _price = value; lbPrice.Text = value; }
+            set { _price = value; lbPrice.Text = value; }   
         }
-        private void btn_Details_Click(object sender, EventArgs e)
+
+        private void btn_Update_Click(object sender, EventArgs e)
         {
-            Detail detail = new Detail();
-            Detail.instance.lb_Title.Text = "Movie Details";
-            detail.Show();
+            Movie _movie = new Movie();
+            CreateUpdate createUpdate = new CreateUpdate(_movie);
+            createUpdate.Show();
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
