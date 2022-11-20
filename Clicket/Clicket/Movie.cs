@@ -2,12 +2,13 @@
 
 namespace Clicket
 {
-    class Movie
+    public class Movie
     {
         private int _movieID;
         private string _title;
         private string _description;
         private DateTime _date;
+        private string _location;
         private int _durationHour;
         private int _durationMin;
         private int _price;
@@ -39,6 +40,11 @@ namespace Clicket
             set { _date = value; }
         }
 
+        public string Location
+        {
+            get { return _location; }
+            set { _location = value; }
+        }
         public int DurationHour
         {
             get { return _durationHour; }
