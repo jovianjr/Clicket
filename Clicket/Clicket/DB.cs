@@ -129,5 +129,35 @@ namespace Clicket
 
             conn.Close();
         }
+
+        public User login(string _username, string _password)
+        {
+            User user = new User();
+
+            conn.Open();
+            string sql = @"select * from login(:username, :password)";
+            cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("username", _username);
+            cmd.Parameters.AddWithValue("password", _password);
+            NpgsqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    string username = (string)reader["_username"];
+                    string password = (string)reader["_password"];
+                    string name = (string)reader["_name"];
+                    string email = (string)reader["_email"];
+                    int phone = (int)reader["_phone"];
+                    DateTime birth = (DateTime)reader["_birth"];
+                    user.SetData(username, password, name, email, phone, birth);
+                }
+            }
+
+            conn.Close();
+            return user;
+
+        }
     }
 }

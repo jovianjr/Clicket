@@ -19,6 +19,10 @@ namespace Clicket
         {
             db.insert(eventItem);
         }
+        public User login(string _username, string _password)
+        {
+            return db.login(_username, _password);
+        }
 
         public List<Movie> getMovieList()
         {

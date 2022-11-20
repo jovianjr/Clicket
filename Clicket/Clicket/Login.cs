@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -44,7 +45,13 @@ namespace Clicket
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            string username = tbUsername.Text;
+            string password= tbPassword.Text;
 
+            Action action = new Action();
+            User user = action.login(username, password);
+
+            Debug.WriteLine(user.Name);
         }
 
         private void linkFAQ_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
