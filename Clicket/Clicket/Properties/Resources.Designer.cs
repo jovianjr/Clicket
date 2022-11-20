@@ -63,6 +63,16 @@ namespace Clicket.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap history {
+            get {
+                object obj = ResourceManager.GetObject("history", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ikon_event {
             get {
                 object obj = ResourceManager.GetObject("ikon event", resourceCulture);
@@ -86,6 +96,26 @@ namespace Clicket.Properties {
         internal static System.Drawing.Bitmap Login_Pic {
             get {
                 object obj = ResourceManager.GetObject("Login Pic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pay_Illustration {
+            get {
+                object obj = ResourceManager.GetObject("Pay Illustration", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Processed_illustration {
+            get {
+                object obj = ResourceManager.GetObject("Processed illustration", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -37,9 +37,13 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.iconEvent = new System.Windows.Forms.PictureBox();
             this.btn_Event = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.iconHistory = new System.Windows.Forms.PictureBox();
+            this.btnHistory = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lbSubTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.flp_history = new System.Windows.Forms.FlowLayoutPanel();
             this.flp_event = new System.Windows.Forms.FlowLayoutPanel();
             this.flp_movie = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -51,6 +55,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconMovie)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconEvent)).BeginInit();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconHistory)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -83,6 +89,7 @@
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(81)))));
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.panel7);
+            this.panel4.Controls.Add(this.panel8);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel4.Location = new System.Drawing.Point(754, 0);
             this.panel4.Name = "panel4";
@@ -95,7 +102,7 @@
             this.panel6.Controls.Add(this.iconMovie);
             this.panel6.Controls.Add(this.btn_Movie);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(276, 20);
+            this.panel6.Location = new System.Drawing.Point(109, 20);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(167, 60);
             this.panel6.TabIndex = 3;
@@ -134,7 +141,7 @@
             this.panel7.Controls.Add(this.iconEvent);
             this.panel7.Controls.Add(this.btn_Event);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel7.Location = new System.Drawing.Point(443, 20);
+            this.panel7.Location = new System.Drawing.Point(276, 20);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(167, 60);
             this.panel7.TabIndex = 5;
@@ -142,6 +149,7 @@
             // iconEvent
             // 
             this.iconEvent.BackColor = System.Drawing.Color.White;
+            this.iconEvent.ErrorImage = null;
             this.iconEvent.Image = global::Clicket.Properties.Resources.ikon_event;
             this.iconEvent.Location = new System.Drawing.Point(17, 9);
             this.iconEvent.Name = "iconEvent";
@@ -167,6 +175,46 @@
             this.btn_Event.UseVisualStyleBackColor = false;
             this.btn_Event.Click += new System.EventHandler(this.btn_Event_Click);
             // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.panel8.Controls.Add(this.iconHistory);
+            this.panel8.Controls.Add(this.btnHistory);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel8.Location = new System.Drawing.Point(443, 20);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(167, 60);
+            this.panel8.TabIndex = 6;
+            // 
+            // iconHistory
+            // 
+            this.iconHistory.BackColor = System.Drawing.Color.White;
+            this.iconHistory.ErrorImage = null;
+            this.iconHistory.Image = global::Clicket.Properties.Resources.history;
+            this.iconHistory.Location = new System.Drawing.Point(17, 9);
+            this.iconHistory.Name = "iconHistory";
+            this.iconHistory.Size = new System.Drawing.Size(62, 43);
+            this.iconHistory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconHistory.TabIndex = 4;
+            this.iconHistory.TabStop = false;
+            this.iconHistory.Click += new System.EventHandler(this.iconHistory_Click);
+            // 
+            // btnHistory
+            // 
+            this.btnHistory.BackColor = System.Drawing.Color.White;
+            this.btnHistory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnHistory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnHistory.Font = new System.Drawing.Font("Rubik", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnHistory.Location = new System.Drawing.Point(0, 0);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.btnHistory.Size = new System.Drawing.Size(167, 60);
+            this.btnHistory.TabIndex = 1;
+            this.btnHistory.Text = "History";
+            this.btnHistory.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHistory.UseVisualStyleBackColor = false;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
@@ -190,6 +238,7 @@
             // panel1
             // 
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.Controls.Add(this.flp_history);
             this.panel1.Controls.Add(this.flp_event);
             this.panel1.Controls.Add(this.flp_movie);
             this.panel1.Controls.Add(this.panel3);
@@ -199,6 +248,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1424, 508);
             this.panel1.TabIndex = 4;
+            // 
+            // flp_history
+            // 
+            this.flp_history.AutoScroll = true;
+            this.flp_history.BackColor = System.Drawing.Color.White;
+            this.flp_history.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flp_history.Location = new System.Drawing.Point(194, 0);
+            this.flp_history.Name = "flp_history";
+            this.flp_history.Size = new System.Drawing.Size(1042, 508);
+            this.flp_history.TabIndex = 4;
             // 
             // flp_event
             // 
@@ -248,7 +307,7 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(Title);
             this.Name = "Dashboard";
-            this.Text = "Dashboard";
+            this.Text = "Clicket";
             this.Load += new System.EventHandler(this.Dashboard_Load);
             Title.ResumeLayout(false);
             Title.PerformLayout();
@@ -257,6 +316,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconMovie)).EndInit();
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconEvent)).EndInit();
+            this.panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.iconHistory)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -281,5 +342,9 @@
         private PictureBox iconMovie;
         private Panel panel7;
         private PictureBox iconEvent;
+        private Panel panel8;
+        private PictureBox iconHistory;
+        private Button btnHistory;
+        private FlowLayoutPanel flp_history;
     }
 }
