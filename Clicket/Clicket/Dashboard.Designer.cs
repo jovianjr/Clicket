@@ -142,6 +142,7 @@
             // iconEvent
             // 
             this.iconEvent.BackColor = System.Drawing.Color.White;
+            this.iconEvent.ErrorImage = null;
             this.iconEvent.Image = global::Clicket.Properties.Resources.ikon_event;
             this.iconEvent.Location = new System.Drawing.Point(17, 9);
             this.iconEvent.Name = "iconEvent";
