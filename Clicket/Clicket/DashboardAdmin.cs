@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,60 +18,45 @@ namespace Clicket
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
         }
-        private void populateItems()
+
+        private void populateItems(List<Movie> listMovie, List<Event> listEvent, List<Transaction> listHistory)
         {
-            MovieItemAdmin[] movieItems = new MovieItemAdmin[20];
+            MovieItemAdmin[] movieItems = new MovieItemAdmin[listMovie.Count];
+
 
             for (int i = 0; i < movieItems.Length; i++)
             {
-                movieItems[i] = new MovieItemAdmin();
-                movieItems[i].title = "Movie " + i.ToString();
-
-                //if (flp_movie.Controls.Count > 0)
-                //{
-                //    flp_movie.Controls.Clear();
-                //}
-                //else
+                movieItems[i] = new MovieItemAdmin(listMovie[i]);
                 flp_movie.Controls.Add(movieItems[i]);
             }
 
-            EventItemAdmin[] eventItems = new EventItemAdmin[20];
+            EventItemAdmin[] eventItems = new EventItemAdmin[listEvent.Count];
             for (int i = 0; i < eventItems.Length; i++)
             {
-                eventItems[i] = new EventItemAdmin();
-                eventItems[i].title = "Event " + i.ToString();
-
-                //if (flp_movie.Controls.Count > 0)
-                //{
-                //    flp_movie.Controls.Clear();
-                //}
-                //else
+                eventItems[i] = new EventItemAdmin(listEvent[i]);
                 flp_event.Controls.Add(eventItems[i]);
             }
 
-            Transaction[] transaction = new Transaction[20];
+            Transaction[] transaction = new Transaction[listHistory.Count];
             for (int i = 0; i < transaction.Length; i++)
             {
-                transaction[i] = new Transaction();
-                transaction[i].title = i.ToString();
-                transaction[i].date = i.ToString();
-                transaction[i].location = i.ToString();
-                transaction[i].price = i.ToString();
-                transaction[i].qty = i.ToString();
-                transaction[i].total = i.ToString();
-                transaction[i].status = "Status";
-
-                flp_history.Controls.Add(transaction[i]);
+                flp_history.Controls.Add(listHistory[i]);
             }
         }
 
         private void DashboardAdmin_Load(object sender, EventArgs e)
         {
-            populateItems();
             flp_event.Visible = false;
             flp_history.Visible = false;
             btn_Movie.BackColor = Color.FromArgb(255, 195, 0);
             iconMovie.BackColor = Color.FromArgb(255, 195, 0);
+
+            Action action = new Action();
+            List<Movie> movies = action.getMovieList();
+            List<Event> events = action.getEventList();
+            List<Transaction> histories = action.getHistoryListAdmin();
+            populateItems(movies, events, histories);
+
         }
         private void btn_Movie_Click(object sender, EventArgs e)
         {

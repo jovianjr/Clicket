@@ -12,43 +12,28 @@ namespace Clicket
 {
     public partial class EventItemAdmin : UserControl
     {
-        public EventItemAdmin()
+        private Event _currEvent;
+        public EventItemAdmin(Event currEvent)
         {
             InitializeComponent();
+            _currEvent = currEvent;
+
+            lbTitle.Text = currEvent.Title;
+            lbDate.Text = currEvent.StartDate.ToString("dd MMM yyyy") + " - " + currEvent.EndDate.ToString("dd MMM yyyy");
+            lbLocation.Text = currEvent.Location;
+            lbPrice.Text = "Rp. " + currEvent.Price.ToString();
+            pb_poster.ImageLocation = currEvent.ImgURL;
         }
 
-        private string _eventTitle;
-        private string _date;
-        private string _location;
-        private string _price;
-        private Image _poster;
-
-        public string title
+        public Event CurrEvent
         {
-            get { return _eventTitle; }
-            set { _eventTitle = value; lbTitle.Text = value; }
-        }
-
-        public string date
-        {
-            get { return _date; }
-            set { _date = value; lbDate.Text = value; }
-        }
-        public string location
-        {
-            get { return _location; }
-            set { _location = value; lbLocation.Text = value; }
-        }
-        public string price
-        {
-            get { return price; }
-            set { _price = value; lbPrice.Text = value; }
+            get { return _currEvent; }
+            set { _currEvent = value; }
         }
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            Event _event = new Event();
-            CreateUpdate createUpdate = new CreateUpdate(_event);
+            CreateUpdate createUpdate = new CreateUpdate(_currEvent);
             createUpdate.Show();
         }
 

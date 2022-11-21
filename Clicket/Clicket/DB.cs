@@ -153,14 +153,15 @@ namespace Clicket
                     string email = (string)reader["_email"];
                     int phone = (int)reader["_phone"];
                     DateTime birth = (DateTime)reader["_birth"];
-                    user.SetData(id, username, password, name, email, phone, birth);
+                    int role_id = (int)reader["_role_id"];
+                    user.SetData(id, username, password, name, email, phone, birth, role_id);
                 }
             }
 
             conn.Close();
             return user;
         }
-    
+
         public List<History> getHistory(int id)
         {
             List<History> history = new List<History>();
@@ -177,13 +178,43 @@ namespace Clicket
                 {
                     string title = (string)reader["_title"];
                     string date = (string)reader["_date"];
-                    string location = (string)reader["_location"]; 
-                    string price = reader["_price"].ToString(); 
-                    string qty = reader["_quantity"].ToString(); 
+                    string location = (string)reader["_location"];
+                    string price = reader["_price"].ToString();
+                    string qty = reader["_quantity"].ToString();
                     string total = reader["_total"].ToString();
                     string status = (string)reader["_status"];
                     History result = new History(title, date, location, price, qty, total, status);
 
+                    history.Add(result);
+                }
+            }
+
+            conn.Close();
+            return history;
+        }
+
+        public List<Transaction> getHistoryAdmin()
+        {
+            List<Transaction> history = new List<Transaction>();
+
+            conn.Open();
+            string sql = "select * from get_order_history_admin()";
+            cmd = new NpgsqlCommand(sql, conn);
+            NpgsqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    string title = (string)reader["_title"];
+                    string date = (string)reader["_date"];
+                    string location = (string)reader["_location"];
+                    string price = reader["_price"].ToString();
+                    string qty = reader["_quantity"].ToString();
+                    string total = reader["_total"].ToString();
+                    string status = (string)reader["_status"];
+
+                    Transaction result = new Transaction(title, date, location, price, qty, total, status);
                     history.Add(result);
                 }
             }
@@ -232,6 +263,63 @@ namespace Clicket
             }
 
             return result == "0" ? false : true;
+        }
+
+        public void update(Movie movieItem)
+        {
+            conn.Open();
+            string sql = @"select * from update_movie(:_id, :_title, :_description, :_location, :_date, :_durationHour, :_durationMin, :_price, :_quota, :_imgUrl, :_genre, :_ageRate)";
+            cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("_id", movieItem.MovieID);
+            cmd.Parameters.AddWithValue("_title", movieItem.Title);
+            cmd.Parameters.AddWithValue("_description", movieItem.Description);
+            cmd.Parameters.AddWithValue("_location", movieItem.Location);
+            cmd.Parameters.AddWithValue("_date", movieItem.Date);
+            cmd.Parameters.AddWithValue("_durationHour", movieItem.DurationHour);
+            cmd.Parameters.AddWithValue("_durationMin", movieItem.DurationMin);
+            cmd.Parameters.AddWithValue("_price", movieItem.Price);
+            cmd.Parameters.AddWithValue("_quota", movieItem.Quota);
+            cmd.Parameters.AddWithValue("_imgUrl", movieItem.ImgURL);
+            cmd.Parameters.AddWithValue("_genre", movieItem.Genre);
+            cmd.Parameters.AddWithValue("_ageRate", movieItem.ageRate);
+
+            if ((int)cmd.ExecuteScalar() == 1)
+            {
+                MessageBox.Show("Movie berhasil diupdate", "Well Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Movie gagal diupdate", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            conn.Close();
+        }
+
+        public void update(Event eventItem)
+        {
+            conn.Open();
+            string sql = @"select * from update_event(:_id, :_title, :_description, :_location, :_start_date, :_end_date, :_price, :_quota, :_imgUrl)";
+            cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("_id", eventItem.EventID);
+            cmd.Parameters.AddWithValue("_title", eventItem.Title);
+            cmd.Parameters.AddWithValue("_description", eventItem.Description);
+            cmd.Parameters.AddWithValue("_location", eventItem.Location);
+            cmd.Parameters.AddWithValue("_start_date", eventItem.StartDate);
+            cmd.Parameters.AddWithValue("_end_date", eventItem.EndDate);
+            cmd.Parameters.AddWithValue("_price", eventItem.Price);
+            cmd.Parameters.AddWithValue("_quota", eventItem.Quota);
+            cmd.Parameters.AddWithValue("_imgUrl", eventItem.ImgURL);
+
+            if ((int)cmd.ExecuteScalar() == 1)
+            {
+                MessageBox.Show("Event berhasil diupdate", "Well Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Event gagal diupdate", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            conn.Close();
         }
     }
 }

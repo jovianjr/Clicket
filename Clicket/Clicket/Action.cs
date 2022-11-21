@@ -16,6 +16,14 @@ namespace Clicket
         {
             db.insert(movieItem);
         }
+        public void update(Movie movieItem)
+        {
+            db.update(movieItem);
+        }
+        public void update(Event eventItem)
+        {
+            db.update(eventItem);
+        }
         public void add(Event eventItem)
         {
             db.insert(eventItem);
@@ -38,6 +46,11 @@ namespace Clicket
         public List<History> getHistoryList(int _id)
         {
             return db.getHistory(_id);
+        }
+
+        public List<Transaction> getHistoryListAdmin()
+        {
+            return db.getHistoryAdmin();
         }
 
         public Boolean orderMovie(int movie_id, int user_id, int qty, int amount, string file)

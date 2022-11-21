@@ -54,12 +54,25 @@ namespace Clicket
 
             if(user.Name != null)
             {
-                var frm = new Dashboard();
-                frm.Location = this.Location;
-                frm.StartPosition = FormStartPosition.Manual;
-                frm.FormClosing += delegate { this.Show(); };
-                frm.Show();
-                this.Hide();
+                if (User.RoleID == 1000)
+                {
+                    var frm = new Dashboard();
+                    frm.Location = this.Location;
+                    frm.StartPosition = FormStartPosition.Manual;
+                    frm.FormClosing += delegate { this.Show(); };
+                    frm.Show();
+                    this.Hide();
+                }
+                else if(User.RoleID == 1001)
+                {
+                    var frm = new DashboardAdmin();
+                    frm.Location = this.Location;
+                    frm.StartPosition = FormStartPosition.Manual;
+                    frm.FormClosing += delegate { this.Show(); };
+                    frm.Show();
+                    this.Hide();
+                }
+
             }
             else
             {

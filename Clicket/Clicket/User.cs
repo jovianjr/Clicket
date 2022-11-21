@@ -13,8 +13,10 @@ namespace Clicket
         private string _email;
         private int _phone;
         private DateTime _birth;
+        private static int _role_id;
 
         public static int UserID { get => _id; }
+        public static int RoleID { get => _role_id; }
 
         public string Username { get => _username; }
 
@@ -28,7 +30,7 @@ namespace Clicket
 
         public DateTime Birth { get => _birth; set => _birth = value; }
 
-        public void SetData(int id, string username, string password, string name, string email, int phone, DateTime birth)
+        public void SetData(int id, string username, string password, string name, string email, int phone, DateTime birth, int role)
         {
             _id = id;
             _username = username;
@@ -37,6 +39,7 @@ namespace Clicket
             _email = email;
             _phone = phone;
             _birth = birth;
+            _role_id = role;
         }
 
         public Boolean SignUp(string username, string password, string name, string email, DateOnly birth)

@@ -10,7 +10,6 @@ namespace Clicket
 		private string _location;
         private DateTime _startDate;
 		private DateTime _endDate;
-        private string _location;
         private int _price;
 		private int _quota;
 		private string _imgURL;
@@ -49,11 +48,6 @@ namespace Clicket
 			get { return _endDate; }
 			set { _endDate = value; }
 		}
-        public string Location
-        {
-            get { return _location; }
-            set { _location = value; }
-        }
 
         public int Price
 		{
