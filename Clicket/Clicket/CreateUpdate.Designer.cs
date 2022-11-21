@@ -32,8 +32,7 @@
             this.pn_payment = new System.Windows.Forms.Panel();
             this.btnChange = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.cbAgeRate = new System.Windows.Forms.ComboBox();
-            this.cbGenre = new System.Windows.Forms.ComboBox();
+            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.tbQuota = new System.Windows.Forms.TextBox();
             this.tbPrice = new System.Windows.Forms.TextBox();
             this.tbDescription = new System.Windows.Forms.TextBox();
@@ -60,7 +59,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.Title = new System.Windows.Forms.Panel();
             this.ofdPoster = new System.Windows.Forms.OpenFileDialog();
-            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
+            this.tbGenre = new System.Windows.Forms.TextBox();
+            this.tbAgeRate = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.pn_payment.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -106,9 +106,9 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.tbAgeRate);
+            this.panel5.Controls.Add(this.tbGenre);
             this.panel5.Controls.Add(this.dtpEndDate);
-            this.panel5.Controls.Add(this.cbAgeRate);
-            this.panel5.Controls.Add(this.cbGenre);
             this.panel5.Controls.Add(this.tbQuota);
             this.panel5.Controls.Add(this.tbPrice);
             this.panel5.Controls.Add(this.tbDescription);
@@ -134,29 +134,14 @@
             this.panel5.Size = new System.Drawing.Size(892, 532);
             this.panel5.TabIndex = 23;
             // 
-            // cbAgeRate
+            // dtpEndDate
             // 
-            this.cbAgeRate.Font = new System.Drawing.Font("Rubik", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbAgeRate.FormattingEnabled = true;
-            this.cbAgeRate.Items.AddRange(new object[] {
-            "NR",
-            "R",
-            "PG-13",
-            "PG",
-            "G"});
-            this.cbAgeRate.Location = new System.Drawing.Point(242, 427);
-            this.cbAgeRate.Name = "cbAgeRate";
-            this.cbAgeRate.Size = new System.Drawing.Size(186, 32);
-            this.cbAgeRate.TabIndex = 54;
-            // 
-            // cbGenre
-            // 
-            this.cbGenre.Font = new System.Drawing.Font("Rubik", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbGenre.FormattingEnabled = true;
-            this.cbGenre.Location = new System.Drawing.Point(242, 389);
-            this.cbGenre.Name = "cbGenre";
-            this.cbGenre.Size = new System.Drawing.Size(186, 32);
-            this.cbGenre.TabIndex = 53;
+            this.dtpEndDate.Font = new System.Drawing.Font("Rubik", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEndDate.Location = new System.Drawing.Point(587, 63);
+            this.dtpEndDate.Name = "dtpEndDate";
+            this.dtpEndDate.Size = new System.Drawing.Size(278, 30);
+            this.dtpEndDate.TabIndex = 55;
             // 
             // tbQuota
             // 
@@ -425,14 +410,21 @@
             // 
             this.ofdPoster.FileName = "openFileDialog1";
             // 
-            // dtpEndDate
+            // tbGenre
             // 
-            this.dtpEndDate.Font = new System.Drawing.Font("Rubik", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEndDate.Location = new System.Drawing.Point(587, 63);
-            this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(278, 30);
-            this.dtpEndDate.TabIndex = 55;
+            this.tbGenre.Font = new System.Drawing.Font("Rubik", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbGenre.Location = new System.Drawing.Point(243, 389);
+            this.tbGenre.Name = "tbGenre";
+            this.tbGenre.Size = new System.Drawing.Size(186, 30);
+            this.tbGenre.TabIndex = 56;
+            // 
+            // tbAgeRate
+            // 
+            this.tbAgeRate.Font = new System.Drawing.Font("Rubik", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbAgeRate.Location = new System.Drawing.Point(243, 425);
+            this.tbAgeRate.Name = "tbAgeRate";
+            this.tbAgeRate.Size = new System.Drawing.Size(186, 30);
+            this.tbAgeRate.TabIndex = 57;
             // 
             // CreateUpdate
             // 
@@ -465,8 +457,6 @@
         private Panel pn_payment;
         private Button btnChange;
         private Panel panel5;
-        private ComboBox cbAgeRate;
-        private ComboBox cbGenre;
         private TextBox tbQuota;
         private TextBox tbPrice;
         private TextBox tbDescription;
@@ -489,5 +479,7 @@
         private Label lbQuota;
         private PictureBox pb_poster;
         private DateTimePicker dtpEndDate;
+        private TextBox tbAgeRate;
+        private TextBox tbGenre;
     }
 }

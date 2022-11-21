@@ -19,21 +19,6 @@ namespace Clicket
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void linkLupaPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
@@ -41,7 +26,7 @@ namespace Clicket
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            pnRegister.Visible = false;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -80,19 +65,20 @@ namespace Clicket
             }
         }
 
-        private void linkFAQ_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void lblBuatAkun_LinkClicked(object sender, EventArgs e)
         {
-
+            pnRegister.Visible = true;
         }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
+        private void btnRegister_Click(object sender, EventArgs e)
         {
-
+            
+            pnRegister.Visible = false;
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-
+            pnRegister.Visible = false;
         }
     }
 }

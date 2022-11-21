@@ -56,8 +56,8 @@ namespace Clicket
             tbDurHour.Text = _movie.DurationHour.ToString();
             tbDurMin.Text = _movie.DurationMin.ToString();
             tbQuota.Text = _movie.Quota.ToString();
-            cbGenre.SelectedItem = _movie.Genre;
-            cbAgeRate.SelectedItem = _movie.ageRate;
+            tbGenre.Text = _movie.Genre.ToString();
+            tbAgeRate.Text = _movie.ageRate;
             pb_poster.ImageLocation = _movie.ImgURL;
             dtpEndDate.Visible = false;
             _isNewMovie = false;
@@ -79,8 +79,8 @@ namespace Clicket
             pb_poster.ImageLocation = _event.ImgURL;
             tbDurHour.Visible = false;
             tbDurMin.Visible = false;
-            cbGenre.Visible = false;
-            cbAgeRate.Visible = false;
+            tbGenre.Visible = false;
+            tbAgeRate.Visible = false;
             _isNewMovie = false;
             _isNewEvent = false;
         }
