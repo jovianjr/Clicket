@@ -37,8 +37,8 @@ namespace Clicket
             {
                 tbDurHour.Visible = false;
                 tbDurMin.Visible = false;
-                cbGenre.Visible = false;
-                cbAgeRate.Visible = false;
+                tbGenre.Visible = false;
+                tbAgeRate.Visible = false;
                 _isNewEvent = true;
             }
         }
@@ -99,8 +99,8 @@ namespace Clicket
                 newMovie.DurationMin = Int32.Parse(tbDurMin.Text);
                 newMovie.Price = Int32.Parse(tbPrice.Text);
                 newMovie.Quota = Int32.Parse(tbQuota.Text);
-                newMovie.ageRate = "PG";
-                newMovie.Genre = new string[]{"action"};
+                newMovie.ageRate = tbAgeRate.Text;
+                newMovie.Genre = new string[]{tbGenre.Text};
                 newMovie.ImgURL = pb_poster.ImageLocation;
                 action.add(newMovie);
             } else if (_isNewEvent)
@@ -128,7 +128,7 @@ namespace Clicket
                 newMovie.DurationMin = Int32.Parse(tbDurMin.Text);
                 newMovie.Price = Int32.Parse(tbPrice.Text);
                 newMovie.Quota = Int32.Parse(tbQuota.Text);
-                newMovie.ageRate = cbAgeRate.SelectedItem.ToString();
+                newMovie.ageRate = tbAgeRate.Text;
                 newMovie.Genre = currMovie.Genre;
                 newMovie.ImgURL = pb_poster.ImageLocation;
                 action.update(newMovie);

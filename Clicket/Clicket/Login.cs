@@ -78,7 +78,7 @@ namespace Clicket
             string password = tbPassword.Text;
             string name = tbName.Text;
             string email = tbEmail.Text;
-            string phone = tbPhone.Text;
+            int phone = Int32.Parse(tbPhone.Text);
             DateTime birth = dtpBirth.Value.Date;
 
             Action action = new Action();
