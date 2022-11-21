@@ -20,6 +20,10 @@ namespace Clicket
         {
             db.update(movieItem);
         }
+        public void delete(Movie movieItem)
+        {
+            db.delete(movieItem);
+        }
         public void add(Event eventItem)
         {
             db.insert(eventItem);
@@ -27,6 +31,10 @@ namespace Clicket
         public void update(Event eventItem)
         {
             db.update(eventItem);
+        }
+        public void delete(Event eventItem)
+        {
+            db.delete(eventItem);
         }
         public User login(string _username, string _password)
         {

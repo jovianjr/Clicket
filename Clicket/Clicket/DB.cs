@@ -331,5 +331,43 @@ namespace Clicket
 
             conn.Close();
         }
+
+        public void delete(Movie movieItem)
+        {
+            conn.Open();
+            string sql = @"select * from delete_movie(:_id)";
+            cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("_id", movieItem.MovieID);
+
+            if ((int)cmd.ExecuteScalar() == 1)
+            {
+                MessageBox.Show("Movie berhasil dihapus", "Well Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Movie gagal dihapus", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            conn.Close();
+        }
+
+        public void delete(Event eventItem)
+        {
+            conn.Open();
+            string sql = @"select * from delete_event(:_id)";
+            cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("_id", eventItem.EventID);
+
+            if ((int)cmd.ExecuteScalar() == 1)
+            {
+                MessageBox.Show("Event berhasil dihapus", "Well Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Event gagal dihapus", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            conn.Close();
+        }
     }
 }
