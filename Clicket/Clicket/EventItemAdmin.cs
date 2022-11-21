@@ -39,7 +39,12 @@ namespace Clicket
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
-
+            DialogResult result = MessageBox.Show("Apakah anda yakin?", "Delete Event", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                Action action = new Action();
+                action.delete(_currEvent);
+            }
         }
     }
 }

@@ -20,6 +20,10 @@ namespace Clicket
         {
             db.update(movieItem);
         }
+        public void delete(Movie movieItem)
+        {
+            db.delete(movieItem);
+        }
         public void add(Event eventItem)
         {
             db.insert(eventItem);
@@ -28,9 +32,17 @@ namespace Clicket
         {
             db.update(eventItem);
         }
+        public void delete(Event eventItem)
+        {
+            db.delete(eventItem);
+        }
         public User login(string _username, string _password)
         {
             return db.login(_username, _password);
+        }
+        public void register(string _username, string _password, string _name, string _email, int _phone, DateTime _birth)
+        {
+            db.register(_username, _password, _name, _email, _phone, _birth);
         }
 
         public List<Movie> getMovieList()
@@ -61,6 +73,26 @@ namespace Clicket
         public Boolean orderEvent(int event_id, int user_id, int qty, int amount, string file)
         {
             return db.order_event(event_id, user_id, qty, amount, file);
+        }
+
+        public void confirmOrderMovie(int id)
+        {
+            db.confirm_order_movie(1, id);
+        }
+
+        public void rejectOrderMovie(int id)
+        {
+            db.confirm_order_movie(0, id);
+        }
+
+        public void confirmOrderEvent(int id)
+        {
+            db.confirm_order_event(1, id);
+        }
+
+        public void rejectOrderEvent(int id)
+        {
+            db.confirm_order_event(0, id);
         }
 
     }

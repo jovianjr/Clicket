@@ -172,6 +172,38 @@ namespace Clicket
             return user;
         }
 
+        public void register(string _username, string _password, string _name, string _email, int _phone, DateTime _birth)
+        {
+            User user = new User();
+            string result = "0";
+
+            conn.Open();
+            string sql = @"select * from sign_up(:username, :password, :name, :email, :phone, :birth)";
+            cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("username", _username);
+            cmd.Parameters.AddWithValue("password", _password);
+            cmd.Parameters.AddWithValue("name", _name);
+            cmd.Parameters.AddWithValue("email", _email);
+            cmd.Parameters.AddWithValue("phone", _phone);
+            cmd.Parameters.AddWithValue("birth", _birth);
+
+            var firstColumn = cmd.ExecuteScalar();
+            if (firstColumn != null)
+            {
+                result = firstColumn.ToString();
+            }
+
+            Boolean res = result == "0" ? false : true;
+            if(res)
+            {
+                MessageBox.Show("daftar berhasil", "register", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } else
+            {
+                MessageBox.Show("daftar gagal", "register", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            conn.Close();
+        }
+
         public List<History> getHistory(int id)
         {
             List<History> history = new List<History>();
@@ -216,6 +248,8 @@ namespace Clicket
             {
                 while (reader.Read())
                 {
+                    int id = (int)reader["_id"];
+                    string tipe = (string)reader["_type"];
                     string title = (string)reader["_title"];
                     string date = (string)reader["_date"];
                     string location = (string)reader["_location"];
@@ -224,7 +258,7 @@ namespace Clicket
                     string total = reader["_total"].ToString();
                     string status = (string)reader["_status"];
 
-                    Transaction result = new Transaction(title, date, location, price, qty, total, status);
+                    Transaction result = new Transaction(id, tipe, title, date, location, price, qty, total, status);
                     history.Add(result);
                 }
             }
@@ -327,6 +361,82 @@ namespace Clicket
             else
             {
                 MessageBox.Show("Event gagal diupdate", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            conn.Close();
+        }
+
+        public void delete(Movie movieItem)
+        {
+            conn.Open();
+            string sql = @"select * from delete_movie(:_id)";
+            cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("_id", movieItem.MovieID);
+
+            if ((int)cmd.ExecuteScalar() == 1)
+            {
+                MessageBox.Show("Movie berhasil dihapus", "Well Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Movie gagal dihapus", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            conn.Close();
+        }
+
+        public void delete(Event eventItem)
+        {
+            conn.Open();
+            string sql = @"select * from delete_event(:_id)";
+            cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("_id", eventItem.EventID);
+
+            if ((int)cmd.ExecuteScalar() == 1)
+            {
+                MessageBox.Show("Event berhasil dihapus", "Well Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Event gagal dihapus", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            conn.Close();
+        }
+        public void confirm_order_movie(int act, int id)
+        {
+            conn.Open();
+            string sql = @"select * from confirm_order_movie(:act, :_id)";
+            cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("act", act);
+            cmd.Parameters.AddWithValue("_id", id);
+
+            if ((int)cmd.ExecuteScalar() == 1)
+            {
+                MessageBox.Show("Berhasil", "Well Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Gagal", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            conn.Close();
+        }
+        public void confirm_order_event(int act, int id)
+        {
+            conn.Open();
+            string sql = @"select * from confirm_order_event(:act, :_id)";
+            cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("act", act);
+            cmd.Parameters.AddWithValue("_id", id);
+
+            if ((int)cmd.ExecuteScalar() == 1)
+            {
+                MessageBox.Show("Berhasil", "Well Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Gagal", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             conn.Close();
