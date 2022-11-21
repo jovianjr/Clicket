@@ -7,9 +7,9 @@ namespace Clicket
 		private int _eventID;
 		private string _title;
 		private string _description;
-		private DateTime _startDate;
+		private string _location;
+        private DateTime _startDate;
 		private DateTime _endDate;
-        private string _location;
         private int _price;
 		private int _quota;
 		private string _imgURL;
@@ -17,7 +17,8 @@ namespace Clicket
 		public int EventID
 		{
 			get { return _eventID; }
-		}
+            set { _eventID = value; }
+        }
 
 		public string Title
 		{
@@ -29,9 +30,14 @@ namespace Clicket
 		{
 			get { return _description; }
 			set { _description = value; }
-		}
+        }
+        public string Location
+        {
+            get { return _location; }
+            set { _location = value; }
+        }
 
-		public DateTime StartDate
+        public DateTime StartDate
 		{
 			get { return _startDate; }
 			set { _startDate = value; }
@@ -42,11 +48,6 @@ namespace Clicket
 			get { return _endDate; }
 			set { _endDate = value; }
 		}
-        public string Location
-        {
-            get { return _location; }
-            set { _location = value; }
-        }
 
         public int Price
 		{

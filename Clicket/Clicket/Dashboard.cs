@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,61 +20,44 @@ namespace Clicket
             this.WindowState = FormWindowState.Maximized;
         }
 
-        private void populateItems()
+        private void populateItems(List<Movie> listMovie, List<Event> listEvent, List<History> listHistory)
         {
-            MovieItem[] movieItems = new MovieItem[20];
+            MovieItem[] movieItems = new MovieItem[listMovie.Count];
+
 
             for (int i = 0; i < movieItems.Length; i++)
             {
-                movieItems[i] = new MovieItem();
-                movieItems[i].title = "Movie " + i.ToString();
-                movieItems[i].ageRate = "-";
-
-                //if (flp_movie.Controls.Count > 0)
-                //{
-                //    flp_movie.Controls.Clear();
-                //}
-                //else
+                movieItems[i] = new MovieItem(listMovie[i]);
                 flp_movie.Controls.Add(movieItems[i]);
             }
 
-            EventItem[] eventItems = new EventItem[20];
+            EventItem[] eventItems = new EventItem[listEvent.Count];
             for (int i = 0; i < eventItems.Length; i++)
             {
-                eventItems[i] = new EventItem();
-                eventItems[i].title = "Event " + i.ToString();
-
-                //if (flp_movie.Controls.Count > 0)
-                //{
-                //    flp_movie.Controls.Clear();
-                //}
-                //else
+                eventItems[i] = new EventItem(listEvent[i]);
                 flp_event.Controls.Add(eventItems[i]);
             }
 
-            History[] histories = new History[20];
-            for (int i = 0; i < histories.Length; i++)
+            History[] history = new History[listHistory.Count];
+            for (int i = 0; i < history.Length; i++)
             {
-                histories[i] = new History();
-                histories[i].title = i.ToString();
-                histories[i].date = i.ToString();
-                histories[i].location = i.ToString();
-                histories[i].price = i.ToString();
-                histories[i].qty = i.ToString();
-                histories[i].total = i.ToString();
-                histories[i].status = i.ToString();
-
-                flp_history.Controls.Add(histories[i]);
+                flp_history.Controls.Add(listHistory[i]);
             }
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            populateItems();
             flp_event.Visible = false;
             flp_history.Visible = false;
             btn_Movie.BackColor = Color.FromArgb(255, 195, 0);
             iconMovie.BackColor = Color.FromArgb(255, 195, 0);
+
+            Action action = new Action();
+            List<Movie> movies = action.getMovieList();
+            List<Event> events = action.getEventList();
+            List<History> histories = action.getHistoryList(User.UserID);
+            populateItems(movies, events, histories);
+
         }
 
         private void btn_Movie_Click(object sender, EventArgs e)

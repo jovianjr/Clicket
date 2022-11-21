@@ -48,33 +48,33 @@
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
-            this.lbTitle.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbTitle.Location = new System.Drawing.Point(17, 32);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(71, 26);
+            this.lbTitle.Size = new System.Drawing.Size(69, 25);
             this.lbTitle.TabIndex = 15;
             this.lbTitle.Text = "Judul";
             // 
             // lbLocation
             // 
             this.lbLocation.AutoSize = true;
-            this.lbLocation.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbLocation.Location = new System.Drawing.Point(17, 84);
             this.lbLocation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbLocation.Name = "lbLocation";
-            this.lbLocation.Size = new System.Drawing.Size(98, 26);
+            this.lbLocation.Size = new System.Drawing.Size(94, 25);
             this.lbLocation.TabIndex = 15;
             this.lbLocation.Text = "Location";
             // 
             // lbDate
             // 
             this.lbDate.AutoSize = true;
-            this.lbDate.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbDate.Location = new System.Drawing.Point(17, 58);
             this.lbDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(58, 26);
+            this.lbDate.Size = new System.Drawing.Size(57, 25);
             this.lbDate.TabIndex = 14;
             this.lbDate.Text = "Date";
             // 
@@ -83,12 +83,12 @@
             this.lbPrice.AutoSize = true;
             this.lbPrice.BackColor = System.Drawing.Color.White;
             this.lbPrice.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lbPrice.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbPrice.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lbPrice.Location = new System.Drawing.Point(38, 50);
             this.lbPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPrice.Name = "lbPrice";
-            this.lbPrice.Size = new System.Drawing.Size(94, 26);
+            this.lbPrice.Size = new System.Drawing.Size(94, 25);
             this.lbPrice.TabIndex = 10;
             this.lbPrice.Text = "Rp Price";
             this.lbPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -136,12 +136,12 @@
             this.lbQty.AutoSize = true;
             this.lbQty.BackColor = System.Drawing.Color.White;
             this.lbQty.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lbQty.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbQty.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbQty.Location = new System.Drawing.Point(25, 50);
+            this.lbQty.Location = new System.Drawing.Point(24, 50);
             this.lbQty.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbQty.Name = "lbQty";
-            this.lbQty.Size = new System.Drawing.Size(46, 26);
+            this.lbQty.Size = new System.Drawing.Size(45, 25);
             this.lbQty.TabIndex = 23;
             this.lbQty.Text = "Qty";
             this.lbQty.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -149,7 +149,7 @@
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(71, 50);
+            this.panel4.Location = new System.Drawing.Point(69, 50);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(41, 45);
             this.panel4.TabIndex = 26;
@@ -159,12 +159,12 @@
             this.lbTotal.AutoSize = true;
             this.lbTotal.BackColor = System.Drawing.Color.White;
             this.lbTotal.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lbTotal.Font = new System.Drawing.Font("Rubik SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbTotal.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbTotal.Location = new System.Drawing.Point(112, 50);
+            this.lbTotal.Location = new System.Drawing.Point(110, 50);
             this.lbTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTotal.Name = "lbTotal";
-            this.lbTotal.Size = new System.Drawing.Size(95, 26);
+            this.lbTotal.Size = new System.Drawing.Size(101, 25);
             this.lbTotal.TabIndex = 24;
             this.lbTotal.Text = "Rp Total";
             this.lbTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -172,7 +172,7 @@
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(207, 50);
+            this.panel3.Location = new System.Drawing.Point(211, 50);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(41, 45);
             this.panel3.TabIndex = 25;
@@ -182,12 +182,12 @@
             this.lbStatus.AutoSize = true;
             this.lbStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(61)))));
             this.lbStatus.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lbStatus.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbStatus.ForeColor = System.Drawing.Color.White;
-            this.lbStatus.Location = new System.Drawing.Point(248, 50);
+            this.lbStatus.Location = new System.Drawing.Point(252, 50);
             this.lbStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(77, 26);
+            this.lbStatus.Size = new System.Drawing.Size(73, 25);
             this.lbStatus.TabIndex = 22;
             this.lbStatus.Text = "Status";
             this.lbStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

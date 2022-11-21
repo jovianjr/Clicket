@@ -76,11 +76,11 @@
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbTitle.Font = new System.Drawing.Font("Rubik", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbTitle.ForeColor = System.Drawing.Color.White;
             this.lbTitle.Location = new System.Drawing.Point(59, 25);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(162, 42);
+            this.lbTitle.Size = new System.Drawing.Size(167, 39);
             this.lbTitle.TabIndex = 4;
             this.lbTitle.Text = "#MOVIES";
             // 
@@ -124,7 +124,7 @@
             this.btn_Movie.BackColor = System.Drawing.Color.White;
             this.btn_Movie.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_Movie.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Movie.Font = new System.Drawing.Font("Rubik", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Movie.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Movie.Location = new System.Drawing.Point(0, 0);
             this.btn_Movie.Name = "btn_Movie";
             this.btn_Movie.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
@@ -164,7 +164,7 @@
             this.btn_Event.BackColor = System.Drawing.Color.White;
             this.btn_Event.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_Event.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Event.Font = new System.Drawing.Font("Rubik", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Event.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Event.Location = new System.Drawing.Point(0, 0);
             this.btn_Event.Name = "btn_Event";
             this.btn_Event.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
@@ -204,7 +204,7 @@
             this.btnHistory.BackColor = System.Drawing.Color.White;
             this.btnHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnHistory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHistory.Font = new System.Drawing.Font("Rubik", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnHistory.Location = new System.Drawing.Point(0, 0);
             this.btnHistory.Name = "btnHistory";
             this.btnHistory.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
@@ -230,7 +230,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(81)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Rubik", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(483, 34);
             this.button1.Name = "button1";
@@ -238,14 +238,15 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Add New";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lbSubTitle
             // 
             this.lbSubTitle.AutoSize = true;
-            this.lbSubTitle.Font = new System.Drawing.Font("Rubik", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbSubTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbSubTitle.Location = new System.Drawing.Point(200, 34);
             this.lbSubTitle.Name = "lbSubTitle";
-            this.lbSubTitle.Size = new System.Drawing.Size(201, 34);
+            this.lbSubTitle.Size = new System.Drawing.Size(220, 31);
             this.lbSubTitle.TabIndex = 5;
             this.lbSubTitle.Text = "NOW SHOWING";
             // 

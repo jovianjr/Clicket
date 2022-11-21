@@ -12,61 +12,32 @@ namespace Clicket
 {
     public partial class MovieItemAdmin : UserControl
     {
-        public MovieItemAdmin()
+        private Movie _currMovie;
+
+        public MovieItemAdmin(Movie currMovie)
         {
             InitializeComponent();
+            _currMovie = currMovie;
+
+            lbTitle.Text = currMovie.Title;
+            lbAgeRate.Text = currMovie.ageRate;
+            lbGenre.Text = currMovie.Title;
+            lbDate.Text = currMovie.Date.ToString("ddd, dd MMM yyyy");
+            lbLocation.Text = currMovie.Location;
+            lbDur.Text = currMovie.DurationHour + "h " + currMovie.DurationMin + "m";
+            lbPrice.Text = "Rp. " + currMovie.Price.ToString();
+            pb_poster.ImageLocation = currMovie.ImgURL;
         }
 
-        private string _movieTitle;
-        private string _ageRate;
-        private string _duration;
-        private string _genre;
-        private string _date;
-        private string _location;
-        private string _price;
-        private Image _poster;
-
-        public string title
+        public Movie CurrMovie
         {
-            get { return _movieTitle; }
-            set { _movieTitle = value; lbTitle.Text = value; }
-        }
-
-        public string ageRate
-        {
-            get { return _ageRate; }
-            set { _ageRate = value; lbAgeRate.Text = value; }
-        }
-        public string genre
-        {
-            get { return _genre; }
-            set { _genre = value; lbGenre.Text = value; }
-        }
-        public string date
-        {
-            get { return _date; }
-            set { _date = value; lbDate.Text = value; }
-        }
-        public string location
-        {
-            get { return _location; }
-            set { _location = value; lbLocation.Text = value; }
-        }
-        public string duration
-        {
-            get { return _duration; }
-            set { _duration = value; lbDur.Text = /*_durHour + "*/ "h " /* + _durMinute*/ + "m"; }
-        }
-        public string price
-        {
-            get { return _price; }
-            set { _price = value; lbPrice.Text = value; }   
+            get { return _currMovie; }
+            set { _currMovie = value; }
         }
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            Movie _movie = new Movie();
-            CreateUpdate createUpdate = new CreateUpdate(_movie);
+            CreateUpdate createUpdate = new CreateUpdate(_currMovie);
             createUpdate.Show();
         }
 
