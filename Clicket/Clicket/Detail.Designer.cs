@@ -305,6 +305,7 @@
             this.pb_poster.Margin = new System.Windows.Forms.Padding(2);
             this.pb_poster.Name = "pb_poster";
             this.pb_poster.Size = new System.Drawing.Size(362, 532);
+            this.pb_poster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pb_poster.TabIndex = 11;
             this.pb_poster.TabStop = false;
             // 

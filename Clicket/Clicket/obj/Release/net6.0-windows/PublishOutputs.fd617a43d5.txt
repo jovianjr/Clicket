@@ -1,0 +1,8 @@
+C:\Users\NZN\Downloads\clicket\Clicket.exe
+C:\Users\NZN\Downloads\clicket\Clicket.dll
+C:\Users\NZN\Downloads\clicket\Clicket.deps.json
+C:\Users\NZN\Downloads\clicket\Clicket.runtimeconfig.json
+C:\Users\NZN\Downloads\clicket\Clicket.dll.config
+C:\Users\NZN\Downloads\clicket\Clicket.pdb
+C:\Users\NZN\Downloads\clicket\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\NZN\Downloads\clicket\Npgsql.dll
