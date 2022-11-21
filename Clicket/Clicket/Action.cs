@@ -71,5 +71,25 @@ namespace Clicket
             return db.order_event(event_id, user_id, qty, amount, file);
         }
 
+        public void confirmOrderMovie(int id)
+        {
+            db.confirm_order_movie(1, id);
+        }
+
+        public void rejectOrderMovie(int id)
+        {
+            db.confirm_order_movie(0, id);
+        }
+
+        public void confirmOrderEvent(int id)
+        {
+            db.confirm_order_event(1, id);
+        }
+
+        public void rejectOrderEvent(int id)
+        {
+            db.confirm_order_event(0, id);
+        }
+
     }
 }

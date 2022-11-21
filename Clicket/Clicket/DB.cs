@@ -216,6 +216,8 @@ namespace Clicket
             {
                 while (reader.Read())
                 {
+                    int id = (int)reader["_id"];
+                    string tipe = (string)reader["_type"];
                     string title = (string)reader["_title"];
                     string date = (string)reader["_date"];
                     string location = (string)reader["_location"];
@@ -224,7 +226,7 @@ namespace Clicket
                     string total = reader["_total"].ToString();
                     string status = (string)reader["_status"];
 
-                    Transaction result = new Transaction(title, date, location, price, qty, total, status);
+                    Transaction result = new Transaction(id, tipe, title, date, location, price, qty, total, status);
                     history.Add(result);
                 }
             }
@@ -365,6 +367,44 @@ namespace Clicket
             else
             {
                 MessageBox.Show("Event gagal dihapus", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            conn.Close();
+        }
+        public void confirm_order_movie(int act, int id)
+        {
+            conn.Open();
+            string sql = @"select * from confirm_order_movie(:act, :_id)";
+            cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("act", act);
+            cmd.Parameters.AddWithValue("_id", id);
+
+            if ((int)cmd.ExecuteScalar() == 1)
+            {
+                MessageBox.Show("Berhasil", "Well Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Gagal", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            conn.Close();
+        }
+        public void confirm_order_event(int act, int id)
+        {
+            conn.Open();
+            string sql = @"select * from confirm_order_event(:act, :_id)";
+            cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("act", act);
+            cmd.Parameters.AddWithValue("_id", id);
+
+            if ((int)cmd.ExecuteScalar() == 1)
+            {
+                MessageBox.Show("Berhasil", "Well Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Gagal", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             conn.Close();
