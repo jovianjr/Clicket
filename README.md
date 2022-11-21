@@ -11,5 +11,7 @@ Aplikasi desktop untuk pembelian tiket
 # How to Run?
 Tools yang diperlukan: pgAdmin PostgreSQL
 1. Nyalakan postgres melalui pgadmin
-3. Lakukan restore database berdasarkan file SQL yang tersedia pada pgAdmin
+3. Lakukan restore database berdasarkan file clicket-0.1.1.sql yang tersedia pada pgAdmin
 4. Nyalakan program .exe yang tersedia di folder release
+5. Untuk menggunakan akun admin, diatur secara manual melalui database.
+
