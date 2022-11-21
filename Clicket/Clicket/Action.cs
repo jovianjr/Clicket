@@ -40,6 +40,10 @@ namespace Clicket
         {
             return db.login(_username, _password);
         }
+        public void register(string _username, string _password, string _name, string _email, int _phone, DateTime _birth)
+        {
+            db.register(_username, _password, _name, _email, _phone, _birth);
+        }
 
         public List<Movie> getMovieList()
         {

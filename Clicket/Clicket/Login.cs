@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -72,7 +73,16 @@ namespace Clicket
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            
+
+            string username = tbUsername.Text;
+            string password = tbPassword.Text;
+            string name = tbName.Text;
+            string email = tbEmail.Text;
+            string phone = tbPhone.Text;
+            DateTime birth = dtpBirth.Value.Date;
+
+            Action action = new Action();
+            action.register(username, password, name, email, phone, birth);
             pnRegister.Visible = false;
         }
 

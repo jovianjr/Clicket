@@ -172,6 +172,38 @@ namespace Clicket
             return user;
         }
 
+        public void register(string _username, string _password, string _name, string _email, int _phone, DateTime _birth)
+        {
+            User user = new User();
+            string result = "0";
+
+            conn.Open();
+            string sql = @"select * from sign_up(:username, :password, :name, :email, :phone, :birth)";
+            cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("username", _username);
+            cmd.Parameters.AddWithValue("password", _password);
+            cmd.Parameters.AddWithValue("name", _name);
+            cmd.Parameters.AddWithValue("email", _email);
+            cmd.Parameters.AddWithValue("phone", _phone);
+            cmd.Parameters.AddWithValue("birth", _birth);
+
+            var firstColumn = cmd.ExecuteScalar();
+            if (firstColumn != null)
+            {
+                result = firstColumn.ToString();
+            }
+
+            Boolean res = result == "0" ? false : true;
+            if(res)
+            {
+                MessageBox.Show("daftar berhasil", "register", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } else
+            {
+                MessageBox.Show("daftar gagal", "register", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            conn.Close();
+        }
+
         public List<History> getHistory(int id)
         {
             List<History> history = new List<History>();
