@@ -74,8 +74,8 @@ namespace Clicket
         private void btnRegister_Click(object sender, EventArgs e)
         {
 
-            string username = tbUsername.Text;
-            string password = tbPassword.Text;
+            string username = tbCreateUsername.Text;
+            string password = tbCreatePassword.Text;
             string name = tbName.Text;
             string email = tbEmail.Text;
             int phone = Int32.Parse(tbPhone.Text);
