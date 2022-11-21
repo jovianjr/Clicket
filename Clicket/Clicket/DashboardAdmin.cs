@@ -13,6 +13,9 @@ namespace Clicket
 {
     public partial class DashboardAdmin : Form
     {
+        private bool btn_Movie_State;
+        private bool btn_Event_State;
+
         public DashboardAdmin()
         {
             InitializeComponent();
@@ -60,6 +63,9 @@ namespace Clicket
         }
         private void btn_Movie_Click(object sender, EventArgs e)
         {
+            btn_Movie_State = true;
+            btn_Event_State = false;
+
             flp_movie.Visible = true;
             flp_event.Visible = false;
             flp_history.Visible = false;
@@ -76,6 +82,9 @@ namespace Clicket
 
         private void btn_Event_Click(object sender, EventArgs e)
         {
+            btn_Movie_State = false;
+            btn_Event_State = true;
+
             flp_movie.Visible = false;
             flp_event.Visible = true;
             flp_history.Visible = false;
@@ -91,6 +100,9 @@ namespace Clicket
         }
         private void btnHistory_Click(object sender, EventArgs e)
         {
+            btn_Movie_State = false;
+            btn_Event_State = false;
+
             flp_movie.Visible = false;
             flp_event.Visible = false;
             flp_history.Visible = true;
@@ -119,5 +131,20 @@ namespace Clicket
         {
             btnHistory.PerformClick();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (btn_Movie_State)
+            {
+                CreateUpdate createUpdate = new CreateUpdate("movie");
+                createUpdate.Show();
+            }
+            else if (btn_Event_State)
+            {
+                CreateUpdate createUpdate = new CreateUpdate("event");
+                createUpdate.Show();
+            }
+        }
+
     }
 }

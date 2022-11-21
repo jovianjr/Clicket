@@ -90,10 +90,11 @@ namespace Clicket
         public void insert(Movie movieItem)
         {
             conn.Open();
-            string sql = @"select * from insert_movie(:_title, :_description, :_date, :_durationHour, :_durationMin, :_price, :_quota, :_imgUrl, :_genre, :_ageRate)";
+            string sql = @"select * from insert_movie(:_title, :_description, :_location, :_date, :_durationHour, :_durationMin, :_price, :_quota, :_imgUrl, :_genre, :_ageRate)";
             cmd = new NpgsqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("_title", movieItem.Title);
             cmd.Parameters.AddWithValue("_description", movieItem.Description);
+            cmd.Parameters.AddWithValue("_location", movieItem.Location);
             cmd.Parameters.AddWithValue("_date", movieItem.Date);
             cmd.Parameters.AddWithValue("_durationHour", movieItem.DurationHour);
             cmd.Parameters.AddWithValue("_durationMin", movieItem.DurationMin);
@@ -107,16 +108,21 @@ namespace Clicket
             {
                 MessageBox.Show("Movie berhasil ditambahkan", "Well Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else
+            {
+                MessageBox.Show("Movie gagal ditambahkan", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             conn.Close();
         }
         public void insert(Event eventItem)
         {
             conn.Open();
-            string sql = @"select * from insert_event(:_title, :_description, :_startDate, :_endDate, :_price, :_quota, :_imgUrl)";
+            string sql = @"select * from insert_event(:_title, :_description, :_location, :_startDate, :_endDate, :_price, :_quota, :_imgUrl)";
             cmd = new NpgsqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("_title", eventItem.Title);
             cmd.Parameters.AddWithValue("_description", eventItem.Description);
+            cmd.Parameters.AddWithValue("_location", eventItem.Location);
             cmd.Parameters.AddWithValue("_startDate", eventItem.StartDate);
             cmd.Parameters.AddWithValue("_endDate", eventItem.EndDate);
             cmd.Parameters.AddWithValue("_price", eventItem.Price);
@@ -126,6 +132,10 @@ namespace Clicket
             if ((int)cmd.ExecuteScalar() == 1)
             {
                 MessageBox.Show("Event berhasil ditambahkan", "Well Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Event gagal ditambahkan", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             conn.Close();

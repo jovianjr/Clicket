@@ -13,12 +13,34 @@ namespace Clicket
 {
     public partial class CreateUpdate : Form
     {
+        private Boolean _isNewMovie;
+        private Boolean _isNewEvent;
         private Event currEvent;
         private Movie currMovie;
 
         public CreateUpdate()
         {
             InitializeComponent();
+        }
+
+        public CreateUpdate(string type)
+        {
+            InitializeComponent();
+
+            if (type == "movie")
+            {
+                dtpEndDate.Visible = false;
+                _isNewMovie = true;
+            }
+
+            if (type == "event")
+            {
+                tbDurHour.Visible = false;
+                tbDurMin.Visible = false;
+                cbGenre.Visible = false;
+                cbAgeRate.Visible = false;
+                _isNewEvent = true;
+            }
         }
 
         //Movie
@@ -38,6 +60,8 @@ namespace Clicket
             cbAgeRate.SelectedItem = _movie.ageRate;
             pb_poster.ImageLocation = _movie.ImgURL;
             dtpEndDate.Visible = false;
+            _isNewMovie = false;
+            _isNewEvent = false;
         }
 
         //Event
@@ -57,12 +81,42 @@ namespace Clicket
             tbDurMin.Visible = false;
             cbGenre.Visible = false;
             cbAgeRate.Visible = false;
+            _isNewMovie = false;
+            _isNewEvent = false;
         }
 
         private void SaveData()
         {
             Action action = new Action();
-            if (currMovie != null)
+            if (_isNewMovie)
+            {
+                Movie newMovie = new Movie();
+                newMovie.Title = tbTitle.Text;
+                newMovie.Description = tbDescription.Text;
+                newMovie.Location = tbLocation.Text;
+                newMovie.Date = dtpDate.Value.Date;
+                newMovie.DurationHour = Int32.Parse(tbDurHour.Text);
+                newMovie.DurationMin = Int32.Parse(tbDurMin.Text);
+                newMovie.Price = Int32.Parse(tbPrice.Text);
+                newMovie.Quota = Int32.Parse(tbQuota.Text);
+                newMovie.ageRate = "PG";
+                newMovie.Genre = new string[]{"action"};
+                newMovie.ImgURL = pb_poster.ImageLocation;
+                action.add(newMovie);
+            } else if (_isNewEvent)
+            {
+                Event newEvent = new Event();
+                newEvent.Title = tbTitle.Text;
+                newEvent.Description = tbDescription.Text;
+                newEvent.Location = tbLocation.Text;
+                newEvent.StartDate = dtpDate.Value.Date;
+                newEvent.EndDate = dtpEndDate.Value.Date;
+                newEvent.Price = Int32.Parse(tbPrice.Text);
+                newEvent.Quota = Int32.Parse(tbQuota.Text);
+                newEvent.ImgURL = pb_poster.ImageLocation;
+                action.add(newEvent);
+            }
+            else if (currMovie != null)
             {
                 Movie newMovie = new Movie();
                 newMovie.MovieID = currMovie.MovieID;
@@ -103,6 +157,7 @@ namespace Clicket
         private void btnChange_Click(object sender, EventArgs e)
         {
             ofdPoster.ShowDialog();
+            pb_poster.ImageLocation = ofdPoster.FileName;
         }
 
         private void btn_back_Click(object sender, EventArgs e)

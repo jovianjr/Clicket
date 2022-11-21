@@ -20,13 +20,13 @@ namespace Clicket
         {
             db.update(movieItem);
         }
-        public void update(Event eventItem)
-        {
-            db.update(eventItem);
-        }
         public void add(Event eventItem)
         {
             db.insert(eventItem);
+        }
+        public void update(Event eventItem)
+        {
+            db.update(eventItem);
         }
         public User login(string _username, string _password)
         {
