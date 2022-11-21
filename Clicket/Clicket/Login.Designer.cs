@@ -40,25 +40,33 @@
             this.lblBuatAkun = new System.Windows.Forms.LinkLabel();
             this.btnLogin = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.linkTermOfUse = new System.Windows.Forms.LinkLabel();
-            this.linkFAQ = new System.Windows.Forms.LinkLabel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.pnLogin = new System.Windows.Forms.Panel();
+            this.pnRegister = new System.Windows.Forms.Panel();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.dtpBirth = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tbPhone = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tbName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbEmail = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbCreateUsername = new System.Windows.Forms.TextBox();
+            this.btnRegister = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbCreatePassword = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.pnLogin.SuspendLayout();
+            this.pnRegister.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -81,18 +89,18 @@
             this.label1.Size = new System.Drawing.Size(195, 60);
             this.label1.TabIndex = 0;
             this.label1.Text = "Clicket";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Silver;
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Image = global::Clicket.Properties.Resources.Clicket_logo;
             this.pictureBox1.Location = new System.Drawing.Point(0, 18);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(55, 60);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lblUsername
             // 
@@ -171,6 +179,7 @@
             this.lblBuatAkun.TabIndex = 7;
             this.lblBuatAkun.TabStop = true;
             this.lblBuatAkun.Text = "Buat akun";
+            this.lblBuatAkun.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblBuatAkun_LinkClicked);
             // 
             // btnLogin
             // 
@@ -188,74 +197,222 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(237)))), ((int)(((byte)(178)))));
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Image = global::Clicket.Properties.Resources.Login_Pic;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(701, 620);
+            this.pictureBox2.Size = new System.Drawing.Size(683, 802);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // linkTermOfUse
-            // 
-            this.linkTermOfUse.AutoSize = true;
-            this.linkTermOfUse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(237)))), ((int)(((byte)(178)))));
-            this.linkTermOfUse.DisabledLinkColor = System.Drawing.Color.Transparent;
-            this.linkTermOfUse.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.linkTermOfUse.LinkColor = System.Drawing.Color.Black;
-            this.linkTermOfUse.Location = new System.Drawing.Point(248, 15);
-            this.linkTermOfUse.Name = "linkTermOfUse";
-            this.linkTermOfUse.Size = new System.Drawing.Size(131, 26);
-            this.linkTermOfUse.TabIndex = 10;
-            this.linkTermOfUse.TabStop = true;
-            this.linkTermOfUse.Text = "Term Of Use";
-            // 
-            // linkFAQ
-            // 
-            this.linkFAQ.AutoSize = true;
-            this.linkFAQ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(237)))), ((int)(((byte)(178)))));
-            this.linkFAQ.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.linkFAQ.LinkColor = System.Drawing.Color.Black;
-            this.linkFAQ.Location = new System.Drawing.Point(413, 15);
-            this.linkFAQ.Margin = new System.Windows.Forms.Padding(10, 0, 103, 0);
-            this.linkFAQ.Name = "linkFAQ";
-            this.linkFAQ.Size = new System.Drawing.Size(51, 26);
-            this.linkFAQ.TabIndex = 11;
-            this.linkFAQ.TabStop = true;
-            this.linkFAQ.Text = "FAQ";
-            this.linkFAQ.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkFAQ_LinkClicked);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.pnLogin);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(600, 702);
+            this.panel2.Size = new System.Drawing.Size(600, 802);
             this.panel2.TabIndex = 12;
             // 
-            // panel4
+            // pnLogin
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.lblUsername);
-            this.panel4.Controls.Add(this.tbUsername);
-            this.panel4.Controls.Add(this.linkLupaPassword);
-            this.panel4.Controls.Add(this.btnLogin);
-            this.panel4.Controls.Add(this.lblBelumPunyaAkun);
-            this.panel4.Controls.Add(this.lblPassword);
-            this.panel4.Controls.Add(this.tbPassword);
-            this.panel4.Controls.Add(this.lblBuatAkun);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 206);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(600, 496);
-            this.panel4.TabIndex = 10;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            this.pnLogin.BackColor = System.Drawing.Color.White;
+            this.pnLogin.Controls.Add(this.pnRegister);
+            this.pnLogin.Controls.Add(this.lblUsername);
+            this.pnLogin.Controls.Add(this.tbUsername);
+            this.pnLogin.Controls.Add(this.linkLupaPassword);
+            this.pnLogin.Controls.Add(this.btnLogin);
+            this.pnLogin.Controls.Add(this.lblBelumPunyaAkun);
+            this.pnLogin.Controls.Add(this.lblPassword);
+            this.pnLogin.Controls.Add(this.tbPassword);
+            this.pnLogin.Controls.Add(this.lblBuatAkun);
+            this.pnLogin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnLogin.Location = new System.Drawing.Point(0, 206);
+            this.pnLogin.Name = "pnLogin";
+            this.pnLogin.Size = new System.Drawing.Size(600, 596);
+            this.pnLogin.TabIndex = 10;
+            // 
+            // pnRegister
+            // 
+            this.pnRegister.BackColor = System.Drawing.Color.White;
+            this.pnRegister.Controls.Add(this.btnBack);
+            this.pnRegister.Controls.Add(this.dtpBirth);
+            this.pnRegister.Controls.Add(this.label7);
+            this.pnRegister.Controls.Add(this.label6);
+            this.pnRegister.Controls.Add(this.tbPhone);
+            this.pnRegister.Controls.Add(this.label5);
+            this.pnRegister.Controls.Add(this.tbName);
+            this.pnRegister.Controls.Add(this.label3);
+            this.pnRegister.Controls.Add(this.tbEmail);
+            this.pnRegister.Controls.Add(this.label2);
+            this.pnRegister.Controls.Add(this.tbCreateUsername);
+            this.pnRegister.Controls.Add(this.btnRegister);
+            this.pnRegister.Controls.Add(this.label4);
+            this.pnRegister.Controls.Add(this.tbCreatePassword);
+            this.pnRegister.Location = new System.Drawing.Point(12, 6);
+            this.pnRegister.Name = "pnRegister";
+            this.pnRegister.Size = new System.Drawing.Size(582, 559);
+            this.pnRegister.TabIndex = 11;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnBack.Location = new System.Drawing.Point(334, 471);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(152, 45);
+            this.btnBack.TabIndex = 17;
+            this.btnBack.Text = "Cancel";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // dtpBirth
+            // 
+            this.dtpBirth.CalendarFont = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtpBirth.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtpBirth.Location = new System.Drawing.Point(73, 391);
+            this.dtpBirth.Name = "dtpBirth";
+            this.dtpBirth.Size = new System.Drawing.Size(413, 35);
+            this.dtpBirth.TabIndex = 16;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(68, 362);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 26);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Birth:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(68, 296);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(164, 26);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Phone Number:";
+            // 
+            // tbPhone
+            // 
+            this.tbPhone.BackColor = System.Drawing.Color.Gainsboro;
+            this.tbPhone.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbPhone.Location = new System.Drawing.Point(73, 325);
+            this.tbPhone.MaximumSize = new System.Drawing.Size(413, 34);
+            this.tbPhone.MinimumSize = new System.Drawing.Size(413, 34);
+            this.tbPhone.Name = "tbPhone";
+            this.tbPhone.Size = new System.Drawing.Size(413, 34);
+            this.tbPhone.TabIndex = 14;
+            this.tbPhone.UseSystemPasswordChar = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(68, 229);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(75, 26);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Name:";
+            // 
+            // tbName
+            // 
+            this.tbName.BackColor = System.Drawing.Color.Gainsboro;
+            this.tbName.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbName.Location = new System.Drawing.Point(73, 258);
+            this.tbName.MaximumSize = new System.Drawing.Size(413, 34);
+            this.tbName.MinimumSize = new System.Drawing.Size(413, 34);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(413, 34);
+            this.tbName.TabIndex = 12;
+            this.tbName.UseSystemPasswordChar = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(68, 159);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 26);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Email:";
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.BackColor = System.Drawing.Color.Gainsboro;
+            this.tbEmail.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbEmail.Location = new System.Drawing.Point(73, 188);
+            this.tbEmail.MaximumSize = new System.Drawing.Size(413, 34);
+            this.tbEmail.MinimumSize = new System.Drawing.Size(413, 34);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(413, 34);
+            this.tbEmail.TabIndex = 10;
+            this.tbEmail.UseSystemPasswordChar = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(68, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(119, 26);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Username:";
+            // 
+            // tbCreateUsername
+            // 
+            this.tbCreateUsername.BackColor = System.Drawing.Color.Gainsboro;
+            this.tbCreateUsername.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbCreateUsername.Location = new System.Drawing.Point(73, 49);
+            this.tbCreateUsername.MaximumSize = new System.Drawing.Size(413, 34);
+            this.tbCreateUsername.MinimumSize = new System.Drawing.Size(413, 34);
+            this.tbCreateUsername.Name = "tbCreateUsername";
+            this.tbCreateUsername.Size = new System.Drawing.Size(413, 34);
+            this.tbCreateUsername.TabIndex = 2;
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.BackColor = System.Drawing.Color.Black;
+            this.btnRegister.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnRegister.ForeColor = System.Drawing.Color.White;
+            this.btnRegister.Location = new System.Drawing.Point(73, 467);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Padding = new System.Windows.Forms.Padding(24, 4, 24, 4);
+            this.btnRegister.Size = new System.Drawing.Size(242, 52);
+            this.btnRegister.TabIndex = 8;
+            this.btnRegister.Text = "Create Account";
+            this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(68, 89);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(113, 26);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Password:";
+            // 
+            // tbCreatePassword
+            // 
+            this.tbCreatePassword.BackColor = System.Drawing.Color.Gainsboro;
+            this.tbCreatePassword.Font = new System.Drawing.Font("Rubik", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbCreatePassword.Location = new System.Drawing.Point(73, 118);
+            this.tbCreatePassword.MaximumSize = new System.Drawing.Size(413, 34);
+            this.tbCreatePassword.MinimumSize = new System.Drawing.Size(413, 34);
+            this.tbCreatePassword.Name = "tbCreatePassword";
+            this.tbCreatePassword.Size = new System.Drawing.Size(413, 34);
+            this.tbCreatePassword.TabIndex = 4;
+            this.tbCreatePassword.UseSystemPasswordChar = true;
             // 
             // panel3
             // 
@@ -271,55 +428,23 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.pictureBox2);
-            this.panel5.Controls.Add(this.panel6);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(600, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(701, 702);
+            this.panel5.Size = new System.Drawing.Size(683, 802);
             this.panel5.TabIndex = 11;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 620);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(701, 82);
-            this.panel6.TabIndex = 12;
-            // 
-            // panel7
-            // 
-            this.panel7.AutoSize = true;
-            this.panel7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel7.Controls.Add(this.panel8);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(701, 82);
-            this.panel7.TabIndex = 12;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(237)))), ((int)(((byte)(178)))));
-            this.panel8.Controls.Add(this.linkTermOfUse);
-            this.panel8.Controls.Add(this.linkFAQ);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(701, 82);
-            this.panel8.TabIndex = 12;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1301, 702);
+            this.ClientSize = new System.Drawing.Size(1283, 802);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
@@ -327,15 +452,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.pnLogin.ResumeLayout(false);
+            this.pnLogin.PerformLayout();
+            this.pnRegister.ResumeLayout(false);
+            this.pnRegister.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -356,13 +478,23 @@
         private Label lblBelumPunyaAkun;
         private LinkLabel lblBuatAkun;
         private Button btnLogin;
-        private LinkLabel linkTermOfUse;
-        private LinkLabel linkFAQ;
         private Panel panel3;
-        private Panel panel4;
+        private Panel pnLogin;
         private Panel panel5;
-        private Panel panel6;
-        private Panel panel7;
-        private Panel panel8;
+        private Panel pnRegister;
+        private Label label3;
+        private TextBox tbEmail;
+        private Label label2;
+        private TextBox tbCreateUsername;
+        private Button btnRegister;
+        private Label label4;
+        private TextBox tbCreatePassword;
+        private Label label5;
+        private TextBox tbName;
+        private Label label6;
+        private TextBox tbPhone;
+        private DateTimePicker dtpBirth;
+        private Label label7;
+        private Button btnBack;
     }
 }
